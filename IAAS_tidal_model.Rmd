@@ -1,6 +1,6 @@
 ---
 title: "Integrated Agriculture and Aquaculture System Model with Tidal Influence"
-author: "Nakoa Farrant"
+author: "Nākoa Farrant"
 date: "2/24/2021"
 output: html_document
 ---
@@ -29,7 +29,7 @@ library(MLmetrics) # Calculate Mean Square Error
 daily_stream <- read_csv('heeia_stream_daily.csv') 
 
 st_clean <- daily_stream %>% 
-  mutate(mean = mean_va*0.028*1.157*10^5) %>% # convert mean flow from [ft^3 s^-1] to [m^3 d^-1]
+  mutate(mean = mean_va*0.028*1.157*10^5/4) %>% # convert mean flow from [ft^3 s^-1] to [m^3 6h^-1]
   mutate(date = as.Date(paste(month, day, sep = "-"), "%m-%d")) %>%
   filter(date != 2019-02-29) %>%  # remove Feb 29 that's only present in leap years
   mutate(JD = 1:365) %>% # create Julian Day variable
@@ -39,39 +39,11 @@ st_clean <- daily_stream %>%
 
 # Water quality measurements collected at He‘eia Fishpond in 2014-2015
 ```{r, message=FALSE}
-# Data source: Frank, K. 2014-2015 He‘eia Fishpond Water Quality Report: Data, Visual Summary, and Brief Analysis; University of Hawai’i, Department of Oceanography, 2016
-# Data used in parameterization and validation of the model
+# Data collected by Kiana L. Frank, D. Nākoa Farrant, and members of the Frank and Alegado labs at the University of Hawai‘i, Mānoa and used in parameterization and validation of the model
 
 heeia_wq = read_csv('heeia_wq_data_2014_2015.csv') %>% 
   arrange(date) %>% 
   dplyr::select(date:turbidity)
-
-```
-
-# Isolate temperature measurements [ºC] from the surface and bottom of the He‘eia Fishpond water column
-```{r}
-temp_surface <- heeia_wq %>% 
-  dplyr::select(date, statistic, temp_surface) %>% 
-  filter(statistic == "Mean" | statistic == "Stdv" | statistic == "N") %>% 
-  spread(key = statistic, value = "temp_surface")  %>% 
-  dplyr::rename(temps = Mean, temps_sd = Stdv) %>% 
-  na.omit()
-
-temp_bottom <- heeia_wq %>% 
-  dplyr::select(date, statistic, temp_bottom) %>% 
-  filter(statistic == "Mean" | statistic == "Stdv" | statistic == "N") %>% 
-  spread(key = statistic, value = "temp_bottom")  %>% 
-  dplyr::rename(tempb = Mean, tempb_sd = Stdv) %>% 
-  na.omit()
-
-# calculate monthly average temperature
-temp_full <- merge(temp_surface, temp_bottom, by="date") %>% 
-  mutate(temp_avg = (temps + tempb)/2)
-  
-temp_summ <- temp_full %>% 
-  mutate(month = month(as.POSIXlt(mdy(date)))) %>% 
-  group_by(month) %>% 
-  summarize(temp_mean = mean(temp_avg), temp_sd = sd(temp_avg), n = n())
 
 ```
 
@@ -134,7 +106,10 @@ M_mugil = exp(Predict_mugil[[1]]$Mean_pred["M"]+0.5*diag(Predict_mugil[[1]]$Cov_
   as.numeric()/365/4 # [(6h)^-1], mortality coefficient for M. cephalus
 
 # The fishing rate for the MSY had been predicted in FishLife as ln_Fmsy (0.56 1/yr). That value bias-corrected that and then exponentiated to get the Fmsy which is then converted from [1/yr] to [1/6hr], the step of a tidal cycle
-Fmsy_mugil = exp((exp(Predict_mugil[[1]]$Mean_pred["ln_Fmsy"]+0.5*diag(Predict_mugil[[1]]$Cov_pred)["ln_Fmsy"]))) %>% as.numeric()/365/4 # [(6h)^-1], maximum sustainable fishing rate
+#Fmsy_mugil = exp(Predict_mugil[[1]]$Mean_pred["ln_Fmsy"]+0.5*diag(Predict_mugil[[1]]$Cov_pred)["ln_Fmsy"]) %>% as.numeric()/365/4*0.8 # [(6h)^-1], maximum sustainable fishing rate
+
+# Fmsy without correcting bias from fish rate is 0.405 1/yr
+Fmsy_mugil = exp(Predict_mugil[[1]]$Mean_pred["ln_Fmsy"]) %>% as.numeric()/365/4
 
 # Fish carrying capacity estimate
 K_min = historic_MSY_min*4/r_mugil # g/m^2, minimum M. cephalus carrying capacity
@@ -158,24 +133,53 @@ k_r = 0.1/4 # [(6h)^-1] resuspension rate
 k_s = 0.8/4 # [(6h)^-1] settling rate to sediment. Burdoff and Lorenzen suggest 0.8 /day
 k_b = 0.001/4 # [(6h)^-1] burial removal rate [1/6hr] 
 
-r_NChl = 0.2 # [g N (g Chla)^-1] ratio of nitrogen to Chl-a in algae
+
 alg_CN = 6.6 # ratio of C:N in algae based on the Refield ratio 106:16
 
-# Nitrogen concentrations in ocean near He'eia Fishpond
+# Nitrogen concentrations in ocean near He'eia Fishpond; relevant for tidal mixing
 No_ocean = 0.001 # [g m^-3] organic N 
 Na_ocean = 0.0024 # [g m^-3] ammonium N 
 Ni_ocean = 0.0068 # [g m^-3] nitrate N
-
- # Nitrogen loading from current land use (taro agriculture and wetland)
-LU_No = 1.8 # [g m^-3] organic N concentration in wetland for current land use
-LU_Na = 0.07 # [g m^-3] ammonium N concentration in wetland for current land use
-LU_Ni = 0.07 # [g m^-3] nitrate N concentration in wetland for current land use
 
 # Nitrogen loading to He'eia Fishpond from submarine groundwater discharge. Estimated from Dulai, et al 2016
 SGD_Na = 670/4 # [g (6h)^-1] ammonium N loaded into He'eia Fishpond via submarine groundwater discharge
 SGD_Ni = 74/4 # [g (6h)^-1] nitrate N loaded into He'eia Fishpond via submarine groundwater discharge
 ```
 
+# Global stream nitrogen export data from Alvarez-Cobelas et al., 2008
+We need to get a sense of the fractions of organic N, ammonium N, and nitrate N in stream runoff across different land use scenarios. Nitrogen export from more than 900 river catchments worldwide was analyzed in Alvarez-Cobelas et al., 2008. Below I extract the data from the Supplementary Information of Alvarez-Cobelas et al., 2008 detailing the land cover and nitrogen export associated with different water catchments. 
+
+Nitrogen composition of rivers are summarized for three land use scenarios that resemble the three scenarios being evaluated in the He‘eia IAAS. The nitrogen composition of He‘eia Stream in the current scenario is represented by the average composition of river catchments with at least 70% forest cover from the Alvarez-Cobelas et al., 2008 data. While the current combination of wetland and small portion of traditional agriculture are certainly different from forest, the forest land cover category is most comparable to the current conditions in He‘eia. Nitrogen export from the restored agriculture and urban scenarios for He‘eia Stream will be represented by the average export of rivers with at least 70% land cover in crop and urban use, respectively, from the Alvarez-Cobelas et al., 2008 data. Organic N is presumed to constitute the fraction of Total Nitrogen that is not associated with ammonium or nitrate.
+```{r}
+# Alvarez-Cobelas et al., 2008 SI table with ~940 global river catchments and their land cover fractions
+stream_landcover <- read_csv('stream_landcover.csv') 
+# Alvarez-Cobelas et al., 2008 SI table with ~940 global river catchments and their nitrogen export fractions
+stream_Nexport <- read_csv("stream_nitrogenexport.csv")
+
+# Merge the land cover and nitrogen export associated with each water catchment
+stream_global <- merge(stream_landcover, stream_Nexport, by = "Catchment")
+
+# Extract the traits representing the current scenario in He‘eia
+stream_forest <- stream_global %>% 
+  filter(forest_perc >= 70)
+# Summarize the nitrate and ammonium fractions from the current scenario
+stream_forest_Nfrac <- stream_forest %>% 
+  summarise(NO3_frac = mean(NO3/TN,  na.rm = T), NH4_frac = mean(NH4/TN, na.rm = T))
+
+# Extract the traits representing the restored agriculture scenario in He‘eia
+stream_ag <- stream_global %>% 
+  filter(crop_perc >= 70)
+# Summarize the nitrate and ammonium fractions from the restored agriculture scenario
+stream_ag_Nfrac <- stream_ag %>% 
+  summarise(NO3_frac = mean(NO3/TN,  na.rm = T), NH4_frac = mean(NH4/TN, na.rm = T))
+
+# Extract the traits representing the urban scenario in He‘eia
+stream_urban <- stream_global %>% 
+  filter(urban_perc >= 70) 
+# Summarize the nitrate and ammonium fractions from the urban scenario
+stream_urban_Nfrac <- stream_urban %>% 
+  summarise(NO3_frac = mean(NO3/TN,  na.rm = T), NH4_frac = mean(NH4/TN, na.rm = T))
+```
 
 # Time interval for the model run
 ```{r}
@@ -186,7 +190,7 @@ times_run = seq(0, years_run, by = 1/365/4) # sequence of times to evaluate the 
 ```{r}
 # Parameterization for other land use scenarios
 # Annual increases in loading of nitrogen forms to He‘eia Stream based on the potential upstream land uses. Here we use linear increases in loading for the restored and urban scenarios such that the 
-pars_control = list(
+pars_current = list(
   # Nitrogen loading to He'eia Fishpond from submarine groundwater discharge. Estimated from Dulai, et al 2016
   SGD_Na = 670/4, # [g (6h)^-1] ammonium N loaded into He'eia Fishpond via submarine groundwater discharge
   SGD_Ni = 74/4, # [g (6h)^-1] nitrate N loaded into He'eia Fishpond via submarine groundwater discharge
@@ -204,12 +208,15 @@ pars_control = list(
       
   K_avg = (K_min + K_max)/2, # g/m^2, average M. cephalus carrying capacity
   K_alg = historic_MSY_max*FA*365*4/eff/alg_energy, # [g m^-2] estimated carrying capacity of algae in He‘eia Fishpond
-  K_hs_fish = 3*10^-5*10^6*h_fp, # [g m^-2] half-saturation for fish consuming algae      
-
-  # Annual nitrogen concentration increases in current scenario
-  No_inc = 0, # [g m^-3]
-  Na_inc = 0, # [g m^-3]
-  Ni_inc = 0 # [g m^-3]
+  K_hs_fish = 3*10^-5*10^6*h_fp, # [g m^-2] half-saturation for fish consuming algae  
+  M_mugil = M_mugil,
+  Fmsy_mugil = Fmsy_mugil,
+  
+  # 2500 kg/yr in total N export in current scenario from Bremer et al., 2018 -> 1712 g/6hr
+  W_No = 1712*(1-(stream_forest_Nfrac$NH4_frac + stream_forest_Nfrac$NO3_frac)),
+  W_Na = 1712*stream_forest_Nfrac$NH4_frac,
+  W_Ni = 1712*stream_forest_Nfrac$NO3_frac
+  
 )
 
 
@@ -233,10 +240,10 @@ pars_restored = list(
   K_alg = historic_MSY_max*FA*365*4/eff/alg_energy, # [g m^-2] estimated carrying capacity of algae in He‘eia Fishpond
   K_hs_fish = 3*10^-5*10^6*h_fp, # [g m^-2] half-saturation for fish consuming algae   
   
-  # Annual nitrogen concentration increases in restored scenario
-  No_inc = 0.22, # [g m^-3]
-  Na_inc = 0.009, # [g m^-3]
-  Ni_inc = 0.009 # [g m^-3]
+  # 8515 kg/yr in total N export in restored agriculture scenario from Bremer et al., 2018 -> 5832 g/6h
+  W_No = 5830*(1-(stream_ag_Nfrac$NH4_frac + stream_ag_Nfrac$NO3_frac)),
+  W_Na = 5830*stream_ag_Nfrac$NH4_frac,
+  W_Ni = 5830*stream_ag_Nfrac$NO3_frac
 )
 
 
@@ -261,17 +268,17 @@ pars_urban = list(
   K_alg = historic_MSY_max*FA*365*4/eff/alg_energy, # [g m^-2] estimated carrying capacity of algae in He‘eia Fishpond
   K_hs_fish = 3*10^-5*10^6*h_fp, # [g m^-2] half-saturation for fish consuming algae   
   
-  # Annual nitrogen concentration increases in urban scenario
-  No_inc = 0.56, # [g/m^3]
-  Na_inc = 0.023, # [g/m^3]
-  Ni_inc = 0.023 # [g/m^3]
+  # 17995 kg/yr in total N export in urban scenario from Bremer et al., 2018 -> 12325 g/6h
+  W_No = 12325*(1-(stream_urban_Nfrac$NH4_frac + stream_urban_Nfrac$NO3_frac)),
+  W_Na = 12325*stream_urban_Nfrac$NH4_frac,
+  W_Ni = 12325*stream_urban_Nfrac$NO3_frac
 )
 ```
 
 
 
 ```{r}
-# Generate a forcing function for the daily average stream flow rates 
+# Generate a forcing function for the stream flow rates during a tidal period (6 hours)
 # Reference for the input functions is https://tpetzoldt.github.io/deSolve-forcing/deSolve-forcing.html
 
 stream_mean <- st_clean$mean[1:365] %>% as.data.frame()
@@ -320,25 +327,11 @@ solveFish <- function(pars, t = times_run) {
     # Specify He'eia stream flow rate [m^3 (6h)^-1] based on USGS gauge daily flow averages from 1914-2019
     Q_st = input_stream(t)
     
+    # Specify the loading rates for each nitrogen type based on the parameters used to evaluate each land use scenario
+    W_No = W_No
+    W_Na = W_Na
+    W_Ni = W_Ni
     
-    # Placeholder nitrogen loading rates 
-    W_No = (LU_No + No_inc*20)*Q_st # [g (6h)^-1] loading rate of organic N into the stream
-    W_Na = (LU_Na + Na_inc*20)*Q_st # [g (6h)^-1] loading rate of ammonium N into the stream
-    W_Ni = (LU_Ni + Ni_inc*20)*Q_st # [g (6h)^-1] loading rate of nitrate N into the stream
-
-    
-    # Specify nitrogen loading from the upstream land use based on the number of years that have passed. 
-    # After 20 years, each scenario will reach their expected loading rate for that land use going forward.
-    if(t < 20){
-      W_No = (LU_No + No_inc*yr_curr)*Q_st # [g (6h)^-1] loading rate of organic N into the stream
-      W_Na = (LU_Na + Na_inc*yr_curr)*Q_st # [g (6h)^-1] loading rate of ammonium N into the stream
-      W_Ni = (LU_Ni + Ni_inc*yr_curr)*Q_st # [g (6h)^-1] loading rate of nitrate N into the stream
-    } else {
-      W_No = (LU_No + No_inc*20)*Q_st # [g (6h)^-1] loading rate of organic N into the stream
-      W_Na = (LU_Na + Na_inc*20)*Q_st # [g (6h)^-1] loading rate of ammonium N into the stream
-      W_Ni = (LU_Ni + Ni_inc*20)*Q_st # [g (6h)^-1] loading rate of nitrate N into the stream
-    }
-      
       
     # Parameterize phytoplankton growth - primarily derived from Burford and Lorenzen 2002
     # Phytoplankton growth is at its maximum except when limited by light or nutrients (nitrogen)
@@ -356,8 +349,8 @@ solveFish <- function(pars, t = times_run) {
       if(interval %% 366 < 91 | interval %% 366 > 334) { 
         catch_rate = 0 # Closed season (Dec 1 to March 31)
       }
-      else{
-        catch_rate = 1.05*Fmsy_mugil # harvest after 2 years during times of year outside of the closed season
+      else{ # 0.2*Fmsy is about right in this new scenario but what's it doing to the nitrogen in the fishpond?
+        catch_rate = Fmsy_mugil # harvest after 2 years during times of year outside of the closed season
         }
     }
     else {
@@ -398,13 +391,13 @@ state <- c(
            Na_st = 0.006, # [g/m^3] stream initial ammonium
            Ni_st = 0.006, # [g/m^3] stream initial nitrate
            No_fp = 0.1, # [g/m^3] fishpond initial organic N
-           Na_fp = 0.03, # [g/m^3] fishpond initial ammonium, estimated from mean water quality data Frank (2016)
-           Ni_fp = 0.68, # [g/m^3] fishpond initial nitrate, estimated from mean water quality data Frank (2016)
+           Na_fp = 0.03, # [g/m^3] fishpond initial ammonium, estimated from mean water quality data collected for this study
+           Ni_fp = 0.68, # [g/m^3] fishpond initial nitrate, estimated from mean water quality data collected for this study
            No_sd = 0.05, # [g/m^3] fishpond sediment initial organic N
            Na_sd = 0.45, # [g/m^3] fishpond sediment initial ammonium
            Ni_sd = 0.01, # [g/m^3]  fishpond sediment initial nitrate
-           alg = 0.03, # [g/m^2] 
-           fish = 10 # [g/m^2] 
+           alg = 0.03, # [g/m^2] density of primary producersin the water column (e.g. phytoplankton algae)
+           fish = 10 # [g/m^2] density of fish in the water column (Mugil cephalus, ‘ama‘ama) in this case
            )
 
   return(ode(y = state, t = t, func = fish_func6, parms = pars, method = "euler"))
@@ -414,7 +407,7 @@ state <- c(
 # Run the model for each scenario
 ```{r}
 # Solve the solveFish function using the input parameter list for each of the three scenarios
-out_control <- solveFish(pars = pars_control)
+out_current <- solveFish(pars = pars_current) # Current land cover scenario 
 out_restored <- solveFish(pars = pars_restored)
 out_urban <- solveFish(pars = pars_urban)
 
@@ -423,7 +416,7 @@ out_urban <- solveFish(pars = pars_urban)
 
 # Simple plots of the model outputs
 ```{r}
-plot(out_control)
+plot(out_current)
 ```
 
 ```{r}
@@ -435,240 +428,99 @@ plot(out_urban)
 ```
 
 
-
-```{r}
-
-parRanges_control <- data.frame(min = c(0, 0, 0, 670/4*.8, 74/4*.8, K_min, K_hs_fish*.8, No_ocean*.8, Na_ocean*.8, Ni_ocean*.8, sp_fl*.8, sp_ebb*.8, np_fl*.8, np_ebb*.8, K_alg*.8, r_mugil*.8, M_mugil*.8, Fmsy_mugil*.8), 
-                        max = c(0, 0, 0, 670/4*1.2, 74/4*1.2, K_max, K_hs_fish*1.2, No_ocean*1.2, Na_ocean*1.2, Ni_ocean*1.2, sp_fl*1.2, sp_ebb*1.2, np_fl*1.2, np_ebb*1.2, K_alg*1.2, r_mugil*1.2, M_mugil*1.2, Fmsy_mugil*1.2))
-
-rownames(parRanges_control) <- c("No_inc", "Na_inc", "Ni_inc", "SGD_Na", "SGD_Ni", 
-                         "K_avg", # carrying capacity for fish based on historic yield estimates
-                         "K_hs_fish", # g/m^2, half-saturation for fish consuming algae
-                         # nitrogen concentrations in ocean - units g/m^3
-                         "No_ocean", 
-                         "Na_ocean", 
-                         "Ni_ocean",
-                         # water volume flux rate (m^3/6hr)
-                         "sp_fl",
-                         "sp_ebb",
-                         "np_fl",
-                         "np_ebb",
-                         "K_alg", # g alg / (m^2)
-                         "r_mugil",
-                         "M_mugil",
-                         "Fmsy_mugil"
-                         )
-
-```
-
-```{r}
-
-parRanges_restored <- data.frame(min = c(0.22*.8, 0.009*.8, 0.009*.8, 670/4*.8, 74/4*.8, K_min, K_hs_fish*.8, No_ocean*.8, Na_ocean*.8, Ni_ocean*.8, sp_fl*.8, sp_ebb*.8, np_fl*.8, np_ebb*.8, K_alg*.8, r_mugil*.8, M_mugil*.8, Fmsy_mugil*.8), 
-                        max = c(0.22*1.2, 0.009*1.2, 0.009*1.2, 670/4*1.2, 74/4*1.2, K_max, K_hs_fish*1.2, No_ocean*1.2, Na_ocean*1.2, Ni_ocean*1.2, sp_fl*1.2, sp_ebb*1.2, np_fl*1.2, np_ebb*1.2, K_alg*1.2, r_mugil*1.2, M_mugil*1.2, Fmsy_mugil*1.2))
-
-rownames(parRanges_restored) <- c("No_inc", "Na_inc", "Ni_inc", "SGD_Na", "SGD_Ni", 
-                         "K_avg", # carrying capacity for fish based on historic yield estimates
-                         "K_hs_fish", # g/m^2, half-saturation for fish consuming algae
-                         # nitrogen concentrations in ocean - units g/m^3
-                         "No_ocean", 
-                         "Na_ocean", 
-                         "Ni_ocean",
-                         # water volume flux rate (m^3/6hr)
-                         "sp_fl",
-                         "sp_ebb",
-                         "np_fl",
-                         "np_ebb",
-                         "K_alg", # g alg / (m^2)
-                         "r_mugil",
-                         "M_mugil",
-                         "Fmsy_mugil"
-                         )
-
-
-```
-
-```{r}
-parRanges_urban <- data.frame(min = c(0.56*.8, 0.023*.8, 0.023*.8, 670/4*.8, 74/4*.8, K_min, K_hs_fish*.8, No_ocean*.8, Na_ocean*.8, Ni_ocean*.8, sp_fl*.8, sp_ebb*.8, np_fl*.8, np_ebb*.8, K_alg*.8, r_mugil*.8, M_mugil*.8, Fmsy_mugil*.8), 
-                        max = c(0.56*1.2, 0.023*1.2, 0.023*1.2, 670/4*1.2, 74/4*1.2, K_max, K_hs_fish*1.2, No_ocean*1.2, Na_ocean*1.2, Ni_ocean*1.2, sp_fl*1.2, sp_ebb*1.2, np_fl*1.2, np_ebb*1.2, K_alg*1.2, r_mugil*1.2, M_mugil*1.2, Fmsy_mugil*1.2))
-
-rownames(parRanges_urban) <- c("No_inc", "Na_inc", "Ni_inc", "SGD_Na", "SGD_Ni", 
-                         "K_avg", # carrying capacity for fish based on historic yield estimates
-                         "K_hs_fish", # g/m^2, half-saturation for fish consuming algae
-                         # nitrogen concentrations in ocean - units g/m^3
-                         "No_ocean", 
-                         "Na_ocean", 
-                         "Ni_ocean",
-                         # water volume flux rate (m^3/6hr)
-                         "sp_fl",
-                         "sp_ebb",
-                         "np_fl",
-                         "np_ebb",
-                         "K_alg", # g alg / (m^2)
-                         "r_mugil",
-                         "M_mugil",
-                         "Fmsy_mugil"
-                         )
-
-
-```
-
-
 # Local sensitivity 
 ```{r}
-Sns_control <- sensFun(func = solveFish, parms = pars_control, varscale = 1)
+Sns_current <- sensFun(func = solveFish, parms = pars_current, varscale = 1)
 
-Sns_restored <- sensFun(func = solveFish, parms = pars_restored, varscale = 1)
-
-Sns_urban <- sensFun(func = solveFish, parms = pars_urban, varscale = 1)
+# current main parameters
+Sns_current[, -c(1:2)] <- apply(Sns_current[, -c(1:2)], 2, function(x) as.numeric(x)) %>% 
+  as.data.frame()
+Sns_current_key = gather(Sns_current, key = "Parameter", value = "Sensitivity", -c("x", "var"))
 ```
+#above code started at 2:45pm
+# just running the current for 1500 years at 6 hr time step takes about 4.5 hours to run 
+
 
 ```{r}
-# Control main parameters
-Sns_control[, -c(1:2)] <- apply(Sns_control[, -c(1:2)], 2, function(x) as.numeric(x)) %>% 
-  as.data.frame()
-Sns_control_key = gather(Sns_control, key = "Parameter", value = "Sensitivity", -c("x", "var"))
-
-
-# Restored main parameters
-Sns_restored[, -c(1:2)] <- apply(Sns_restored[, -c(1:2)], 2, function(x) as.numeric(x)) %>% 
-  as.data.frame()
-Sns_restored_key = gather(Sns_restored, key = "Parameter", value = "Sensitivity", -c("x", "var"))
-
-
-# Urban main parameters
-Sns_urban[, -c(1:2)] <- apply(Sns_urban[, -c(1:2)], 2, function(x) as.numeric(x)) %>% 
-  as.data.frame()
-Sns_urban_key = gather(Sns_urban, key = "Parameter", value = "Sensitivity", -c("x", "var"))
-
+parorder <- c("SGD_Na", 
+              "SGD_Ni",
+              "No_ocean", 
+              "Na_ocean", 
+              "Ni_ocean",
+              "sp_fl",
+              "sp_ebb",
+              "np_fl",
+              "np_ebb",
+              "K_avg",
+              "K_alg",
+              "K_hs_fish", 
+              "M_mugil",
+              "Fmsy_mugil",
+              "W_No", 
+              "W_Na", 
+              "W_Ni")
 ```
 
+
 ```{r}
-parorder <- c("No_inc", "Na_inc", "Ni_inc", 
-                         "sp_fl",
-                         "sp_ebb",
-                         "np_fl",
-                         "np_ebb",
-                         "SGD_Na", 
-                         "SGD_Ni", 
-                         "K_alg", # g alg / (m^2)
-                         "K_avg", # carrying capacity for fish based on historic yield estimates
-                         "M_mugil",
-                         "Fmsy_mugil",
-                          "K_hs_fish", 
-                          "r_mugil",
-                         "No_ocean", 
-                         "Na_ocean", 
-                         "Ni_ocean")
 
 # Examine the sensitivity of Ni_fp to different parameters
-Sns_control_nit_df <- Sns_control_key %>% 
+Sns_current_nit_df <- Sns_current_key %>% 
   filter(var == "Ni_fp") %>% 
   transform(Parameter = factor(Parameter, levels=parorder)) %>% 
   filter(x > 1200 & x <= 1220) %>% 
-  filter(Parameter != "r_mugil" & Parameter != "No_inc" & Parameter != "Na_inc" & Parameter != "Ni_inc" & Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
+  filter(Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
 
-```
-
-```{r}
-Sns_nit_summ <- Sns_control_nit_df %>% 
+Sns_nit_summ <- Sns_current_nit_df %>% 
   group_by(Parameter) %>% 
   summarise(mean_sns = mean(Sensitivity)) %>% 
   arrange(mean_sns)
 
 ```
-
-
-```{r}
-Sns_control_plot_nit <- ggplot(data = Sns_control_nit_df, aes(x = x, y = Sensitivity, col= Parameter)) +
-  geom_line() +
-  guides(fill=FALSE) +
-labs(x = "Time (Years)") +
-  theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), strip.background = element_blank(), legend.key = element_rect(colour = NA, fill = NA),
-           strip.placement = "outside", legend.position = "right") 
-
-Sns_control_plot_nit
-```
-
 
 
 # Examine the sensitivity of Na_fp to different parameters
 ```{r}
-
-Sns_control_amm_df <- Sns_control_key %>% 
+Sns_current_amm_df <- Sns_current_key %>% 
   filter(var == "Na_fp") %>% 
   transform(Parameter = factor(Parameter, levels=parorder)) %>% 
   filter(x > 1200 & x <= 1220) %>% 
-  filter(Parameter != "r_mugil" & Parameter != "No_inc" & Parameter != "Na_inc" & Parameter != "Ni_inc" & Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
+  filter(Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
 
-```
-
-```{r}
-Sns_amm_summ <- Sns_control_amm_df %>% 
+Sns_amm_summ <- Sns_current_amm_df %>% 
   group_by(Parameter) %>% 
   summarise(mean_sns = mean(Sensitivity)) %>% 
   arrange(mean_sns)
-
 ```
 
 
 ```{r}
-Sns_control_plot_amm <- ggplot(data = Sns_control_amm_df, aes(x = x, y = Sensitivity, col= Parameter)) +
-  geom_line() +
-  guides(fill=FALSE) +
-  labs(x = "Time (Years)") +
-  theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), strip.background = element_blank(), legend.key = element_rect(colour = NA, fill = NA),
-           strip.placement = "outside", legend.position = "right") 
-
-Sns_control_plot_amm
-```
-
-
-
-
-```{r}
-
-
-Sns_control_fish_df <- Sns_control_key %>% 
+Sns_current_fish_df <- Sns_current_key %>% 
   filter(var == "fish") %>% 
   transform(Parameter = factor(Parameter, levels=parorder)) %>% 
   filter(x > 1200 & x <= 1220) %>% 
-  filter(Parameter != "r_mugil" & Parameter != "No_inc" & Parameter != "Na_inc" & Parameter != "Ni_inc" & Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
+  filter(Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
 
-
-```
-
-```{r}
-Sns_fish_summ <- Sns_control_fish_df %>% 
+Sns_fish_summ <- Sns_current_fish_df %>% 
   group_by(Parameter) %>% 
   summarise(mean_sns = mean(Sensitivity)) %>% 
   arrange(mean_sns)
-
 ```
 
-```{r}
-Sns_control_plot_fish <- ggplot(data = Sns_control_fish_df, aes(x = x, y = Sensitivity, col= Parameter)) +
-  geom_line() +
-  guides(fill=FALSE) +
-  #facet_wrap(~var) + 
-  labs(x = "Time (Years)") +
-  theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), strip.background = element_blank(), legend.key = element_rect(colour = NA, fill = NA),
-           strip.placement = "outside", legend.position = "right") 
-
-Sns_control_plot_fish
-```
 
 ```{r}
 varorder <- c("No_st", "Na_st", "Ni_st", "No_fp", "Na_fp", "Ni_fp", "No_sd", "Na_sd", "Ni_sd", "alg", "fish")
-Sns_control_all_df <- Sns_control_key %>% 
+
+Sns_current_all_df <- Sns_current_key %>% 
   filter(var != "caught" & var != "No_st" & var != "Na_st" & var != "Ni_st") %>% 
   transform(var = factor(var, levels=varorder)) %>% 
   transform(Parameter = factor(Parameter, levels=parorder)) %>% 
   filter(x > 1200 & x <= 1220) %>% 
-  filter(Parameter != "r_mugil" & Parameter != "No_inc" & Parameter != "Na_inc" & Parameter != "Ni_inc" & Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean")
+  filter(Parameter != "No_ocean" & Parameter != "Na_ocean" & Parameter != "Ni_ocean" & Parameter != "W_No" & Parameter != "W_Na" & Parameter != "W_Ni")
 ```
 
 ```{r}
-Sns_control_plot <- ggplot(data = Sns_control_all_df, aes(x = x-1200, y = Sensitivity, col= Parameter)) +
+Sns_current_plot <- ggplot(data = Sns_current_all_df, aes(x = x-1200, y = Sensitivity, col= Parameter)) +
   geom_line() +
   guides(fill=FALSE) +
   facet_wrap(~var) + 
@@ -676,16 +528,44 @@ Sns_control_plot <- ggplot(data = Sns_control_all_df, aes(x = x-1200, y = Sensit
   theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), strip.background = element_blank(), legend.key = element_rect(colour = NA, fill = NA),
            strip.placement = "outside", legend.position = "right") 
 
-Sns_control_plot
+ggsave("figS5.tiff", width = 15, height = 8, dpi = 600, device = "tiff")
+Sns_current_plot
+```
+
+
+# Plots for manuscript
+
+```{r}
+df_current <- as.data.frame(out_current) %>% 
+  mutate(caught_kg = caught*A_fp/1e3)
+df_restored <- as.data.frame(out_restored) %>% 
+  mutate(caught_kg = caught*A_fp/1e3)
+df_urban <- as.data.frame(out_urban) %>% 
+  mutate(caught_kg = caught*A_fp/1e3)
+
+fish_catch <- df_current %>% 
+  dplyr::select(time, caught_kg) %>% 
+  dplyr::rename(Current = caught_kg) %>% 
+  mutate(Restored = df_restored$caught_kg, Urban = df_urban$caught_kg) %>% 
+  gather('Current', 'Restored', 'Urban', key = "Scenario", value = "Mass_kg")
+
+  
 ```
 
 
 
+```{r}
+catch_sum <- fish_catch %>%
+  filter(time > 1200 & time <= 1220) %>% 
+  group_by(Scenario) %>% 
+  summarize(ann_avg_catch = sum(Mass_kg)/1e3/20) # [tons] was in g/m^2 at each time step. Sum the harvest at each time step and multiply by the area to get the mass. Convert to metric tons
+
+```
 
 # Nitrogen accumulation analysis to estimate ecosystem services of IAAS in each scenarios
 ```{r}
 # Current land use of taro agriculture and wetland
-fpC_nitrogen <- df_control %>% 
+fpC_nitrogen <- df_current %>% 
   dplyr::select(time, No_fp, Na_fp, Ni_fp, No_sd, Na_sd, Ni_sd, alg, fish) %>% 
   gather('No_fp', 'Na_fp', 'Ni_fp', 'No_sd', 'Na_sd', 'Ni_sd', 'alg', 'fish', key = "species", value = "concentration") %>% 
   filter(time > 1200 & time < 1220)
@@ -745,37 +625,10 @@ Nretention_U <- fpU_nitrogen %>%
   summarise(annual_N_tons = sum(N_mass)/10^6/365/4/20)
 ```
 
-# Plots for manuscript
-
-```{r}
-df_control <- as.data.frame(out_control) %>% 
-  mutate(caught_kg = caught*A_fp/1e3)
-df_restored <- as.data.frame(out_restored) %>% 
-  mutate(caught_kg = caught*A_fp/1e3)
-df_urban <- as.data.frame(out_urban) %>% 
-  mutate(caught_kg = caught*A_fp/1e3)
-
-fish_catch <- df_control %>% 
-  dplyr::select(time, caught_kg) %>% 
-  dplyr::rename(Current = caught_kg) %>% 
-  mutate(Restored = df_restored$caught_kg, Urban = df_urban$caught_kg) %>% 
-  gather('Current', 'Restored', 'Urban', key = "Scenario", value = "Mass_kg")
-
-  
-```
-
-```{r}
-catch_sum <- fish_catch %>%
-  filter(time > 1200 & time <= 1220) %>% 
-  group_by(Scenario) %>% 
-  summarize(ann_avg_catch = sum(Mass_kg)/1e3/20) # [tons] was in g/m^2 at each time step. Sum the harvest at each time step and multiply by the area to get the mass. Convert to metric tons
-
-```
-
 
 ```{r}
 # create a data frame of fishpond water column output to use in a figure
-fp_df <- df_control %>% 
+fp_df <- df_current %>% 
   dplyr::select(time, No_fp, Na_fp, Ni_fp, alg, fish, caught_kg) %>% 
   gather('No_fp', 'Na_fp', 'Ni_fp', 'alg', 'fish', key = "species", value = "concentration")
 
@@ -787,9 +640,7 @@ fp_df2 <- arrange(transform(fp_df,
              species=factor(species,levels=neworder)),species) %>% 
   filter(time > 1200 & time <= 1220) %>% 
   mutate(days = (time -1200)*365)
-```
 
-```{r}
 fp_df2$facets = factor(fp_df2$species, labels = c(
     "Organic-N~(g/m^{3})", 
     "Ammonium-N~(g/m^{3})",
@@ -798,8 +649,9 @@ fp_df2$facets = factor(fp_df2$species, labels = c(
     "Fish~(g/m^{2})"))
 ```
 
+
 ```{r}
-# Six-panel figure of different state variables output from control conditions in the model
+# Six-panel figure of different state variables output from current conditions in the model
 
 fp_plot <- ggplot(data = fp_df2, aes(x = time-1200, y = concentration, col = species)) +
   facet_wrap(~facets, scales = "free_y", 
@@ -811,17 +663,15 @@ fp_plot <- ggplot(data = fp_df2, aes(x = time-1200, y = concentration, col = spe
   ylab(NULL) +
   theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), strip.background = element_blank(),
            strip.placement = "outside", legend.position = "none") 
-
+ggsave("fig3.tiff", width = 10, height = 5, dpi = 600, device = "tiff")
 fp_plot
 ```
 
 
-
-
-# Model validation with field observations from Frank, 2016
+# Model validation with field observations from He‘eia Fishpond for this study
 ```{r}
 # Isolate the fishpond water column nitrogen concentrations of interest
-fp_water_df <- df_control %>% 
+fp_water_df <- df_current %>% 
   dplyr::select(time, No_fp, Na_fp, Ni_fp) %>% 
   gather('No_fp', 'Na_fp', 'Ni_fp', key = "nitrogen", value = "concentration")
 
@@ -895,7 +745,7 @@ nitate_compare_plot = ggplot() +
   ylab(expression(Concentration~(g/m^3))) +
   guides(fill=guide_legend()) +
   theme(axis.text.x= element_text(size = 8), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5))
-  
+  ggsave("figS4.tiff", width = 15, height = 8, dpi = 600, device = "tiff")
 nitate_compare_plot
 ```
 
@@ -909,7 +759,6 @@ fp_amm <- fp_water_df %>% filter(nitrogen == "Na_fp") %>%
   mutate(days = (time-1218)*365) %>% 
   filter(days > 100 & days < 600)
 
-
 amm_compare_plot = ggplot() +
   geom_line(data = fp_amm, aes(x = days, y = concentration), col = 'red') + 
   geom_point(data = amm_data_shift, aes(x = day_shft, y = amm_obs),col='magenta') +
@@ -917,7 +766,7 @@ amm_compare_plot = ggplot() +
   xlab('Julian Days from Jan.1, 2014') +
   ylab(expression(Concentration~(g/m^3))) +
   theme(axis.text.x= element_text(size = 8), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5))
-
+ggsave("figS3.tiff", width = 15, height = 8, dpi = 600, device = "tiff")
 amm_compare_plot
 ```
 
@@ -992,7 +841,7 @@ nit_nse
 
 # Compare food production from different land uses in the He‘eia IAAS
 ```{r}
-current_catch <- df_control %>% 
+current_catch <- df_current %>% 
   dplyr::select(time, caught_kg) %>% 
   mutate(yr_curr = ceiling(time)) %>% 
   filter(yr_curr > 1200 & yr_curr <= 1220)
@@ -1102,8 +951,20 @@ crop_stacked <- ggplot(crop_data_forplot, aes(fill = Crop, y=Mass, x=Time)) +
     scale_x_continuous(expand = c(0, 0)) + 
     scale_y_continuous(expand = c(0, 0)) +
     theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), legend.title.align = 0.5, strip.background = element_blank())
+ggsave("figS1.tiff", width = 15, height = 8, dpi = 600, device = "tiff")
 
 crop_stacked # difficult to see the mass from fish catch
+```
+```{r}
+crop_data_forplot$source[crop_data_forplot$Crop == "Banana"] <- "Ag"
+crop_data_forplot$source[crop_data_forplot$Crop == "Breadfruit"] <- "Ag"
+crop_data_forplot$source[crop_data_forplot$Crop == "Taro"] <- "Ag"
+crop_data_forplot$source[crop_data_forplot$Crop == "Fish"] <- "Aq"
+
+crop_summary <- crop_data_forplot %>% 
+  filter(Time < 21) %>% 
+  group_by(Scenario, source) %>% 
+  summarise(tons = sum(Mass))
 ```
 
 ```{r}
@@ -1155,7 +1016,8 @@ prot_per_area <- ggplot(cal_sum, aes(fill = Scenario, y=prot_ppl_cultha, x=Time)
     scale_y_continuous(expand = c(0, 0)) +
     theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), legend.title.align = 0.5, strip.background = element_blank())
 
-prot_per_area # difficult to see the mass from fish catch
+ggsave("figS2.tiff", width = 15, height = 8, dpi = 600, device = "tiff")
+prot_per_area 
 ```
 
 
@@ -1166,22 +1028,19 @@ fed_stacked <- ggplot(cal_sum, aes(fill = Scenario, y=ppl_per_cultha, x=Time)) +
     facet_wrap(~Scenario) +
   scale_fill_discrete_qualitative(palette = "Cold") +
     guides(fill=guide_legend()) +
-    labs(y = "People Fed per Hectare", x = "Years") +
+    labs(y = "People Fed per Cultivated Hectare", x = "Years") +
     scale_x_continuous(expand = c(0, 0)) + 
     scale_y_continuous(expand = c(0, 0)) +
     theme(axis.text.x= element_text(size = 8, hjust = .2), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5), legend.title.align = 0.5, strip.background = element_blank())
 
-fed_stacked # difficult to see the mass from fish catch
+fed_stacked
 ```
 
-
-
-
-
-
-
-
-
+```{r}
+ppl_fed_sum <- cal_sum %>% 
+  group_by(Scenario) %>% 
+  summarise(total_people_fed = sum(people_fed), ppl_cultha_avg = mean(ppl_per_cultha))
+```
 
 
 

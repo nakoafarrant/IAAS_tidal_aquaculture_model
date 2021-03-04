@@ -1,0 +1,941 @@
+﻿Catchment,Reference,Discharge,Runoff,crop_perc,forest_perc,urban_perc,pasture_perc
+Aare Oberhasli,Berendt and Opitz (2000),38.98,70.1,,,,
+Accotink creek,USA data,71.32,1188.6,0,2,98,
+Adige,Provini et al. (1992),6820,570.5,,,,
+Agnes,Victoria data,23,343.3,,,,
+Ähtävänjoki,NEST data,553.8,258,26,74,,0
+Aire,House et al. (1997),1131,580.9,25,40,10,25
+Alarconcillo creek,Alvarez-Cobelas (unpubl.),18.3,871.4,,,,
+Albany,McKergow et al. (2003),2.52,10,65,13,,5
+Alhambra creek,Alvarez-Cobelas (unpubl.),0.66,4.1,76,3,,2
+Aliakmon,Voutsa et al. (2001),1324.51,236.5,,,,
+Alpenrhein,Berendt and Opitz (2000),158.53,35.6,,,,
+Altamaha,USA data,19977.91,546.7,26,63,5,
+Alterälven,NEST data,246.4,374,1,65,,7
+Amarguillo near Camuñas,Alvarez-Cobelas (unpubl.),1.6,4.7,82,9,,2
+Amarguillo upstream Urda,Alvarez-Cobelas (unpubl.),0.05,1.6,66,31,,1
+Amazon,Lewis et al. (1999),8460000,1200,,100,,
+Amguema,Smith et al. (2003),9200,294.7,,,,
+Ammonoosuc,USA data,166.4,726.7,2,94,2,
+Amur,Smith et al. (2003),350000,173,,,,
+Anabar,Smith et al. (2003),13200,146.4,,,,
+Andrews creek,Lewis (2002),30.55,536,,,,
+Androscoggin,van Breemen et al. (2002),5408.64,640,,85,,
+Angaw lagoon,Smith et al. (2003),109.5,13687.5,,,,
+Ängermanälven,NEST data,20052.7,498.4,2,95,,0
+Annan,Smith et al. (2003),653,296818.2,,,,
+Apalachicola,Fu and Winchester (1994),22391,502.6,20,80,,
+Apalachicola bay,Smith et al. (2003),29200,112307.7,,,,
+Apalachicola near Sumatra,USA data,47836.33,959.9,30,58,6,
+Apure,Lewis et al. (1999),51000,300,,,,100
+Argen,Berendt and Opitz (2000),19.72,30.2,,,,
+Arno,Smith et al. (2003),2100,246.3,,,,
+Ätran,NEST data,2232.3,524.9,29,65,,0
+Aulencia at Guadarrama junction,Alvarez-Cobelas (unpubl).,11.32,71.6,10,13,11,43
+Aulencia downstream Valmayor reservoir,Alvarez-Cobelas (unpubl).,2.48,24.3,0,18,12,46
+Aulencia near Valdemorillo,Alvarez-Cobelas (unpubl).,3.32,24.4,2,16,4,51
+Auli,Høyas et al. (1997),,,35,65,,
+Aurajoki,NEST data,387.44,309.3,17,80,,0
+Avon,Russell et al. (1998),495,185.1,49,,,
+Aycocks creek,USA data,153.73,563.1,60,34,0,
+Azuer at Vallermoso reservoir,Alvarez-Cobelas (unpubl.),3.25,7,60,7,,12
+Azuer near Carrizosa,Alvarez-Cobelas (unpubl.),5.27,68.8,67,6,,9
+Azuer near La Solana,Alvarez-Cobelas (unpubl.),3.61,5,65,6,,9
+Bachman Run,USA data,19.29,964.3,84,15,1,
+Bahía de Altata-Ensenada del Pabellón,Smith et al. (2003),3400,7391.3,,,,
+Bahía Nueva,Smith et al. (2003),21.78,375.5,,,,
+Baisman Run,Groffman et al. (2004),,,1,66,34,
+Balsas,Smith et al. (2003),14000,125.3,,,,
+Ban Pakong,Smith et al. (2003),16600,602.2,,,,
+Bandon bay,Smith et al. (2003),16060,33458.3,,,,
+Bangpakong estuary,Smith et al. (2003),6570,219000,,,,
+Baptiste lake-A1,Cooke and Prepas (1998),1.77,31,100,,,
+Baptiste lake-A2,Cooke and Prepas (1998),2.34,39,100,,,
+Baptiste lake-F1,Cooke and Prepas (1998),0.1,25,,100,,
+Baptiste lake-F2,Cooke and Prepas (1998),0.3,46,,100,,
+Bardello,Mosello et al. (2001),91.45,639.5,,,,
+Barito,Smith et al. (2003),87000,1358.6,,,,
+Barringer creek,Cairns and Lajtha (2005),1.06,1230,,100,,
+Barron,Moss et al. (1992),1150,528.7,5,40,5,50
+Barthe,Berendt and Opitz (2000),2.1,7.2,,,,
+Bear creek,USA data,62.96,414.2,60,28,7,
+Bedias creek,USA data,54.91,63.9,67,24,1,
+Bedija at Rozalén,Alvarez-Cobelas (unpubl.),0.72,48.6,96,4,,0
+Bedija near Horcajo de Santiago,Alvarez-Cobelas (unpubl.),1.18,10.6,91,8,,0
+Bellinger,Smith et al. (2003),431,239444.4,,,,
+Bemm,Victoria data,59,81.4,30,70,,
+Bevano,Marchetti and Verna (1992),60.76,197.3,88,,,
+Big Lost,USA data,94.9,83,0,31,0,
+Big Sandy creek,USA data,212.26,241.5,43,21,2,
+Big Walnut creek,USA data,125.99,152.7,83,14,1,
+Birkenes,Likens et al. (1977),,,,100,,
+Birs,Berendt and Opitz (2000),3.26,16.2,,,,
+Biscuit brook,Lovett et al. (2000),9.28,963.2,,100,,
+Black,USA data,1959.42,1528.4,6,93,0,
+Blackstone,Nixon et al. (1995),763,624.4,,,,
+Blackwater,USA data,377.56,238.5,31,61,3,
+Bobr,Berendt and Opitz (2000),29.35,5,,,,
+Bobs creek,USA data,22.93,533.1,14,86,0,
+Boesio,Mosello et al. (2001),50.46,1121.3,,,,
+Bois de Sioux,USA data,346.67,86.2,94,0,0,
+Boston harbor,Smith et al. (2003),646.49,6276.6,,,,
+Bothnian bay,Smith et al. (2003),100000,2777.8,,,,
+Bothnian sea,Smith et al. (2003),92000,,,,,
+Botorpsströmmen,NEST data,183.1,180.4,13,63,,3
+Braço do Mota,Williams and Melack (1997a),0.48,2080,80,20,,
+Brantas,Smith et al. (2003),13000,1359.7,,,,
+Bregenzerach,Berendt and Opitz (2000),41.8,50.6,,,,
+Brisbane,Moss et al. (1992),1350,99.6,3,14,7,75
+Broad brook,USA data,31.91,839.6,55,32,8,
+Broadribb,Victoria data,41,62.3,70,30,,
+Broken,Victoria data,54,7.2,,,,
+Brunswick,Smith et al. (2003),114,87692.3,,,,
+Buffalo near Boxley,USA data,54.92,359,4,96,0,
+Buffalo near St. Joe,USA data,1212.57,564.2,13,86,0,
+Bug,Smith et al. (2003),3400,56.6,,,,
+Bullfrog creek,USA data,100.48,1357.9,53,10,7,
+Bungawalbin,McKee and Eyre (2000),406.33,241,0,68,,32
+Burdekin-Haughton,Moss et al. (1992),10850,81.3,1,2,0,97
+Burnett-Kolan,Moss et al. (1992),2900,73,3,17,0,79
+Buskbäcken,Arnheimer et al. (1996),0.81,452,,100,,
+Caboolture,Smith et al. (2003),116,55238.1,,,,
+Cache Creek,Lewis (2002),12.57,449,,,,
+Cache la Poudre,USA data,163.47,61.4,1,66,0,
+Calauag bay,Smith et al. (2003),200,500,,,,
+Calder,House et al. (1997),230,241.6,70,20,15,
+Camboriu estuary,Smith et al. (2003),182.5,365000,,,,
+Cameroon estuarine system,Smith et al. (2003),43800,15368.4,,,,
+Campaspe,Victoria data,0.99,0.3,70,13,,
+Canajoharie creek,USA data,52.5,338.7,66,29,1,
+Cañamares near Villahermosa,Alvarez-Cobelas (unpubl.),4.09,18.1,52,7,,16
+Candiano,Marchetti and Verna (1992),,,69,,,
+Cannobino,Mosello et al. (2001),186.06,1691.5,,,,
+Caribuou Poker creek-C2,Jones et al. (2005),0.01,1.3,,100,,
+Caribuou Poker creek-C3,Jones et al. (2005),0.01,1.3,,100,,
+Caribuou Poker creek-C4,Jones et al. (2005),0.02,2,,100,,
+Carigara bay,Smith et al. (2003),5840,11680,,,,
+Carmen-Machona lagoons,Smith et al. (2003),748,4479,,,,
+Carnation Creek,Likens et al. (1977),,,,100,,
+Caroní,Lewis et al. (1999),161500,1700,,100,,
+Carretas-Pereyra,Smith et al. (2003),234,6685.7,,,,
+Carroll Park,Groffman et al. (2004),,,5,17,52,
+Carson near Carson City,USA data,111.95,45.1,8,55,2,
+Carson near Fort Churchill,USA data,20.76,6.5,6,51,2,
+Carter creek,Wollheim et al. (2005),1.4,358,8,55,11,
+Castle Creek,Lewis (2002),8.41,41,,,,
+Catoctin creek,USA data,226.58,972.5,81,18,1,
+Cau Hai lagoon,Smith et al. (2003),1460,14313.7,,,,
+Caura,Lewis et al. (1999),114000,2400,,100,,
+Cedar river,Likens et al. (1977),,,,100,,
+Cedar Run,USA data,19.88,602.4,21,1,78,
+Center creek,USA data,169.35,221.9,77,16,5,
+Chambers creek,USA data,671.41,312.3,92,2,3,
+Chang Jiang,Smith et al. (2003),962000,501.1,,,,
+Changjiang estuary,Smith et al. (2003),1156502.5,245437.7,,,,
+Chantuto-Panzacola,Smith et al. (2003),287,9566.7,,,,
+Chao Phraya estuary,Smith et al. (2003),5840,153684.2,,,,
+Chao Phraya,Smith et al. (2003),27800,192.1,,,,
+Charles,van Breemen et al. (2002),276.93,583,,59,22,
+Chattahochee near Norcross,USA data,2021.96,668.2,16,71,6,
+Chattahochee near Whitesburg,USA data,4176.01,668.7,14,59,23,
+Cherry creek,USA data,30.27,496.2,2,0,96,
+Chesapeake bay,Smith et al. (2003),57000,5181.8,,,,
+Chester,Norton and Fisher (2000),344.1,300,56,26,4,
+Chicod creek,USA data,23.65,217,42,40,3,
+Chiku lagoon,Smith et al. (2003),109.5,10950,,,,
+Chivero,Nhapi et al. (2002),261,122.2,75,,25,
+Choptank,Norton and Fisher (2000),693.42,390,52,26,5,
+Churchill,Smith et al. (2003),25830,86.5,,,,
+Cienaga Grande de Santa Marta,Smith et al. (2003),4380,9733.3,,,,
+Cimanuk,Smith et al. (2003),4450,1313.9,,,,
+Citanduy,Smith et al. (2003),5300,1375.1,,,,
+Citarum,Smith et al. (2003),7200,9780,,,,
+Clam Harbour,Clair et al. (1994),49.14,1092,,,,
+Clarence,Smith et al. (2003),4826,184198.5,,,,
+Claverack creek,USA data,104.87,663.8,42,46,11,
+Clear creek,USA data,108.96,108.6,0,66,3,
+Clifty creek,USA data,210.07,921.4,98,1,1,
+Coastal Richmond,McKee and Eyre (2000),544.96,613,19,20,,49
+Columbia,Smith et al. (2003),252000,376.9,,,,
+Combined Mekong sites 26 31,Smith et al. (2003),383615,532798.6,,,,
+Combined Pearl river sites 1 3 4,Smith et al. (2003),394200,200101.5,,,,
+Conca,Marchetti and Verna (1992),66.34,436.4,76,,,
+Conceição lagoon,Smith et al. (2003),36.5,1862.2,,,,
+Conejos creek,USA data,127.83,62.6,10,44,0,
+Congo (Zaire) estuary,Smith et al. (2003),1450000,6016597.5,,,,
+Connecticut,van Breemen et al. (2002),16062.2,642,,79,,
+Connecticut at Thompsonville,USA data,13784.18,550.3,11,80,5,
+Conococheague creek,USA data,874.53,670.1,59,36,5,
+Contentnea,USA data,583.6,305.7,50,37,5,
+Coppename,Smith et al. (2003),14000,528.3,,,,
+Córcoles near Munera,Alvarez-Cobelas (unpubl.),0.92,14.7,78,10,,0
+Coshocton,Likens et al. (1977),,,,100,,
+Crab creek Lateral,USA data,40.86,279.9,96,0,1,
+Crab creek near Beverly,USA data,227.8,228,44,0,1,
+Crab creek near Ritzville,USA data,24.2,20.4,73,7,1,
+Cumberland,Victoria data,16.2,810,,,,
+Curdies,Victoria data,138,174.7,,,,
+Curonian lagoon,Smith et al. (2003),22000,13888.9,,,,
+Curtis Coast,Moss et al. (1992),1500,162.6,0,13,0,86
+Daintree,Smith et al. (2003),2444,488800,,,,
+Dalälven,NEST data,17138.8,397.3,2,87,,0
+Danish watershed-130011,Andersen et al. (2001),3.42,300,,,,
+Danish watershed-160030,Andersen et al. (2001),3.96,350,,,,
+Danish watershed-210072,Andersen et al. (2001),1,250,,,,
+Danish watershed-210752,Andersen et al. (2001),1.4,250,,,,
+Danish watershed-210759,Andersen et al. (2001),2.65,250,,,,
+Danish watershed-210803,Andersen et al. (2001),3.18,300,,,,
+Danish watershed-210872,Andersen et al. (2001),13.2,600,,,,
+Danish watershed-220043,Andersen et al. (2001),7.55,500,,,,
+Danish watershed-350011,Andersen et al. (2001),2.64,400,,,,
+Danish watershed-360012,Andersen et al. (2001),6.18,650,,,,
+Danish watershed-470033,Andersen et al. (2001),0.94,200,,,,
+Danish watershed-480011,Andersen et al. (2001),1.78,200,,,,
+Danish watershed-520033,Andersen et al. (2001),1.08,200,,,,
+Danish watershed-570044,Andersen et al. (2001),3.8,250,,,,
+Danish watershed-570063,Andersen et al. (2001),2.46,200,,,,
+Danish watershed-580019,Andersen et al. (2001),0.86,200,,,,
+Danish watershed-620022,Andersen et al. (2001),3.85,250,,,,
+Däntersta,Arnheimer et al. (1996),0.08,274,,100,,
+Danube,Smith et al. (2003),114000,147.3,,,,
+Dart,Russell et al. (1998),31.5,684.8,13,,,80
+Daugava,NEST data,19274,250.4,61,29,,8
+Daule,Smith et al. (2003),8700,700.2,,,,
+Davao gulf,Smith et al. (2003),2920,442.4,,,,
+Dead Run,Groffman et al. (2004),,,41,7,43,
+Delängersän,NEST data,939.4,291.4,3,81,,4
+Delaware,van Breemen et al. (2002),9605.32,547,,75,,
+Derwent,House et al. (1997),457,238,60,30,10,10
+Destra Reno,Marchetti and Verna (1992),,,78,,,
+Devils Cradle creek,USA data,21.58,616.6,61,37,1,
+Dnepr,Smith et al. (2003),53400,108.7,,,,
+Dnestr,Smith et al. (2003),10700,149.5,,,,
+Dnieper-Bug,Smith et al. (2003),49640,62050,,,,
+Dniester,Smith et al. (2003),9855,27375,,,,
+Dokai bay,Smith et al. (2003),36.5,3318.2,,,,
+Don,Moss et al. (1992),496,399.4,,50,10,40
+Don,Smith et al. (2003),700,175.7,1,2,0,97
+Don,House et al. (1997),20700,48.6,,,,
+Dousinbury creek,USA data,8.81,83.1,57,42,1,
+Drau,Berendt and Opitz (2000),277.17,23,,,,
+Duck creek,USA data,29.87,120.9,89,5,1,
+Dunk,Clair et al. (1994),76.95,675,,,,
+East Fork Carson,USA data,168.76,174,0,72,0,
+East Fork Trinity,USA data,152.54,358.9,93,4,2,
+East Fork White,USA data,5263.26,412.8,69,25,5,
+East Mahantango creek,USA data,97.03,836.4,69,31,0,
+Eagle,Clair et al. (1994),7564.6,694,,,,
+East,USA data,37.83,310.1,92,5,1,
+East China sea,Smith et al. (2003),1217000,1352.2,,,,
+EL 68 D Wasteway,USA data,116.91,310.1,96,0,2,
+El Soto creek,Alvarez-Cobelas (unpubl).,27.16,734,79,0,17,1
+El Villar creek,Alvarez-Cobelas (unpubl).,6.6,287.1,67,2,18,12
+ELA,Likens et al. (1977),,,,100,,
+Elde,Berendt and Opitz (2000),9.57,3.2,,,,
+Elder creek,Lewis (2002),23.99,1333,,,,
+Elephant head,Goodale et al. (2000),1.62,1320,,100,,
+Elk,USA data,896.34,407.2,46,51,2,
+Elkhorn,USA data,2844.54,158.1,84,1,1,
+Emän,NEST data,896.8,225.4,21,67,,0
+Emerald lake,Lewis et al. (1999),1.02,854,,,,100
+Encampment river,Lewis (2002),103.57,548,,,,
+Era,Caporali et al. (1981),119.85,361,70,30,,
+Erno,Mosello et al. (2001),6.31,242.6,,,,
+Esopus creek,USA data,169.64,1003.8,1,94,2,
+Esquatzel Diversion Channel,USA data,88.43,71.9,88,0,0,
+Estero de Punta Banda,Smith et al. (2003),164.25,15946.6,,,,
+Eurajoki,NEST data,404,234.7,42,57,,0
+Exe,Russell et al. (1998),508,845.3,11,,,80
+Falcon Nile creek,Cairns and Lajtha (2005),0.47,1570,,100,,
+Fall Kill,USA data,26.22,535.2,28,43,29,
+Falling creek,Lewis (2002),40.73,219,,,,
+Fanno creek,USA data,135.08,1688.5,2,5,92,
+Filtering Sun brook,Cairns and Lajtha (2005),0.73,1220,,100,,
+Fitzroy,Moss et al. (1992),7100,49.8,5,9,0,86
+Fiumi Uniti,Marchetti and Verna (1992),636.12,507.7,56,,,
+Fly River estuary,Smith et al. (2003),32850,65700,,,,
+Formarksän,NEST data,76.1,205.8,2,87,,2
+Four Mile creek,Vanni et al. (2001),98,759.7,91,8,,
+Fox,USA data,3655.4,222.5,52,26,3,
+Franklin,Victoria data,25,333.3,,,,
+Frenchman Hills wasteway,USA data,349.55,668.4,73,0,1,
+Gales creek,USA data,82.66,4592.5,0,100,0,
+Gambia,Lewis et al. (1999),4620,110,,,,100
+Ganges,Caraco and Cole (1999),426290,470,,,,
+Garonne,Probst (1985),22643,435.4,55,4,,24
+Gauja,NEST data,1854,308,51,40,,6
+Gavleän,NEST data,917.3,274,2,87,,3
+Gazi Bay mangrove creek,Smith et al. (2003),35.89,5127.4,,,,
+Gellibrand,Victoria data,287,274.4,,,,
+Genoa,Victoria data,10.5,12.5,0,100,,
+George's Gorge-B,Goodale et al. (2000),0.08,1100,,100,,
+Gibbs brook-A,Goodale et al. (2000),2.94,1350,,100,,
+Gibbs brook-B,Goodale et al. (2000),0.1,1020,,100,,
+Gibbs brook-D,Goodale et al. (2000),0.04,900,,100,,
+GideÄlven,NEST data,1899.3,346.1,5,88,,0
+Gigüela near Herencia,Alvarez-Cobelas (unpubl.),48.66,5.7,90,3,,0
+Gigüela near Palomares,Alvarez-Cobelas (unpubl.),8,43.1,52,40,,2
+Gigüela near Pozorrubio,Alvarez-Cobelas (unpubl.),31.28,41.5,73,20,,3
+Gigüela near San Isidro chapel,Alvarez-Cobelas (unpubl.),48.6,35.5,78,15,,3
+Gigüela near Villafranca,Alvarez-Cobelas (unpubl.),42.72,15.9,79,10,,2
+Gigüela near Villarrubia de los Ojos,Alvarez-Cobelas (unpubl.),6.2,0.5,93,2,,0
+Giona,Mosello et al. (2001),,,,,,
+Gjern,Kronvang et al. (1999),33.43,290.7,68,,,
+Glama,Caraco and Cole (1999),21100.83,530,,,,
+Glen Boulder-B,Goodale et al. (2000),0.48,1320,,100,,
+Glen Boulder-C,Goodale et al. (2000),0.16,1150,,100,,
+Glen Boulder-D,Goodale et al. (2000),0.56,1330,,100,,
+Glenelg,Victoria data,56,27.9,,20,,80
+Glyndon,Groffman et al. (2004),,,0,4,47,
+Gold Coast,Moss et al. (1992),1700,283.6,3,8,5,84
+Göta Älv,NEST data,23104.5,372.1,6,91,,0
+Goulburn,Victoria data,19,1.1,,,,
+Green,USA data,70.72,660.9,7,92,1,
+Grejs,Skop and Sorensen (1998),,,80,,,
+Guadarrama,Alvarez et al. (2003),109,109,29,15,10,15
+Guadarrama at Los Molinos,Alvarez-Cobelas (unpubl).,15.5,329.8,0,49,7,14
+Guadarrama at Villalba,Alvarez-Cobelas (unpubl).,53.54,229.8,1,25,11,35
+Guadarrama near Batres,Alvarez-Cobelas (unpubl).,82.15,83.3,31,12,13,25
+Guadarrama near Brunete,Alvarez-Cobelas (unpubl).,37.6,62.5,11,16,13,35
+Guadarrama near Majadahonda,Alvarez-Cobelas (unpubl).,28.71,67.9,11,17,14,31
+Guadiana at La Cubeta,Alvarez-Cobelas (unpubl.),15.29,17.6,66,9,,5
+Guadiana at La Esclusa bridge,Alvarez-Cobelas (unpubl.),13.12,15.1,66,9,,5
+Guadiana at Vado Ancho,Alvarez-Cobelas (unpubl.),0.52,1.7,70,8,,6
+Guadiana downstream San Pedra lake,Alvarez-Cobelas (unpubl.),12.79,18.1,68,9,,6
+Guadiana downstream Tomilla lake,Alvarez-Cobelas (unpubl.),11.77,26.5,69,8,,6
+Guaviare,Lewis et al. (1999),270000,1800,,100,,
+Guayas River estuary,Smith et al. (2003),21291.67,79744.1,,,,
+Gudena,Berendt and Opitz (2000),28.63,11,,,,
+Gulf of Arauco,Smith et al. (2003),27740,33912,,,,
+Gulf of Gdansk,Smith et al. (2003),37300,9815.8,,,,
+Gulf of Lions,Smith et al. (2003),55845,4653.8,,,,
+Gulf of Nicoya,Smith et al. (2003),821.25,1564.3,,,,
+Gulf of Riga,Smith et al. (2003),36200,2216.8,,,,
+Gürbe,Berendt and Opitz (2000),2.9,22.8,,,,
+Gwynnbrook,Groffman et al. (2004),,,6,11,68,
+Hakata bay,Smith et al. (2003),770,12419.4,,,,
+Hale brook,Goodale et al. (2000),2.86,1270,,100,,
+Hastings,Smith et al. (2003),3377,489420.3,,,,
+Hauraki Gulf,Smith et al. (2003),3317,571.9,,,,
+Havel,Berendt and Opitz (2000),110.52,4.6,,,,
+Hawkesbury-Nepean,Smith et al. (2003),470.12,13827.1,,,,
+Helge ä,NEST data,1384.5,322.9,12,86,,0
+Henrys Fork,USA data,1282.11,153.8,26,50,0,
+Hensley creek,Cairns and Lajtha (2005),3.7,1000,,100,,
+Herbert,Moss et al. (1992),5000,493.6,4,16,0,80
+Hidden stream,Cairns and Lajtha (2005),2.79,1990,,100,,
+Hockanum,USA data,109.18,571.6,11,35,51,
+Hojen,Skop and Sorensen (1998),,,80,,,
+Hoosic,USA data,669.65,505.8,21,70,9,
+Hopkins,Victoria data,192,23,,,,
+Housatonic,USA data,1440,544,20,68,8,
+Høyjord,Høyas et al. (1997),132295.8,140,,,,
+Huanghe,Caraco and Cole (1999),8.06,260,,100,,
+Hubbard brook,Likens et al. (1977),17661.3,510,,,,
+Hudson,Caraco and Cole (1999),7427.92,622,,81,,
+Hudson  at Waterford,USA data,8657.84,722.8,15,77,4,
+Hudson near Lake Luzerne,USA data,5387.83,764.7,1,91,1,
+Huhtisuonoja,Arnheimer et al. (1996),1.29,258,33,67,,
+Hulubäcken,Arnheimer et al. (1996),2.41,650,,100,,
+Hunte,Berendt and Opitz (2000),9.94,5.8,,,,
+Husted creek,Cairns and Lajtha (2005),0.56,940,,100,,
+Icacos,Lewis et al. (1999),11.79,3683,,100,,
+IIjoki,NEST data,7314.4,361.8,15,81,,0
+Ill,Berendt and Opitz (2000),60.77,47.4,,,,
+Illinois,USA data,1270.06,517.5,58,36,6,
+Indalsälven,NEST data,19149,546.8,1,96,,0
+Indian,Clair et al. (1994),517.19,531,,,,
+Inn,Berendt and Opitz (2000),200.06,28,,,,
+Inner Thermaikos gulf,Smith et al. (2003),5110,15208.3,,,,
+Irish sea,Smith et al. (2003),41000,872.3,,,,
+Ise bay,Smith et al. (2003),36000,18461.5,,,,
+Isle Morts,Clair et al. (1994),394.22,1923,,,,
+Isojoki,NEST data,502.1,383.8,16,83,,0
+Jacks Fork,USA data,681.7,864,26,74,1,
+James,van Breemen et al. (2002),6595.84,407,,81,,
+Japurá,Lewis et al. (1999),600000,2000,,100,,
+Jardine,Smith et al. (2003),1769,315892.9,,,,
+Jiulong bay,Smith et al. (2003),14965,176058.8,,,,
+Johnstone,Moss et al. (1992),4700,2017.2,15,39,1,44
+Jualón near Palomares,Alvarez-Cobelas (unpubl.),2.24,42.9,85,6,,8
+Juruá,Lewis et al. (1999),198000,900,,100,,
+Kalajoji,NEST data,1714.1,290.2,14,79,,0
+Kalix Älv,NEST data,13055.9,449.2,3,81,,3
+Kander-Simme,Berendt and Opitz (2000),41.43,37.8,,,,
+Kaneohe bay,Smith et al. (2003),36.5,3650,,,,
+Karvianjoki,NEST data,751.1,236.3,8,78,,0
+Kasari,NEST data,695.6,255.6,37,49,,13
+Kavlingean,Krug (1993),12.17,10,71,15,,9
+Kazan and Black,Caraco and Cole (1999),34200,190,,,,
+Keila,NEST data,186.5,357.6,51,43,,5
+Kelley,Clair et al. (1994),49.64,788,,,,
+Kemijoki,NEST data,23362.3,349.6,2,92,,0
+Kennebec,van Breemen et al. (2002),7920.6,566,,80,,
+Kessinger ditch,USA data,28.8,197.3,94,4,2,
+Kiamichi River,Lewis (2002),80.6,775,,,,
+Kiewa,Victoria data,31,18.7,,,,
+Kiiminginjoki,NEST data,1767.5,334.8,11,83,,0
+Kilaan,Berendt and Opitz (2000),2.94,6.8,,,,
+Kings,USA data,807.83,591,31,68,1,
+Kishacoquikkas creek,USA data,121.97,818.6,59,40,1,
+Kiskonji-Perniönjoki,NEST data,381.2,306.1,31,66,,0
+Knysna estuary,Smith et al. (2003),5.48,295.9,,,,
+Koivupuro,Arnheimer et al. (1996),0.41,342,,100,,
+Kokemäenjoki,NEST data,9010.1,289.1,40,58,,0
+Koskenkylänjoki,NEST data,275.1,334.5,11,87,,0
+Krems,Berendt and Opitz (2000),5.88,15,,,,
+Kromme estuary,Smith et al. (2003),4.02,1338.3,,,,
+Kuala Terengganu estuary,Smith et al. (2003),17155,2144375,,,,
+Kuivajoki,NEST data,917.6,407.1,2,86,,0
+Kullarna,Arnheimer et al. (1996),1.01,506,,100,,
+Kuokkel,Likens et al. (1977),,,,100,,
+Kymijoki,NEST data,8392.6,255.2,15,67,,0
+Kyrönjoki,NEST data,1753.7,287.8,9,90,,0
+La Have,Clair et al. (1994),1033.75,827,,,,
+La Peralera creek,Alvarez-Cobelas (unpubl).,2.05,170.5,3,3,12,63
+La Solana creek,Alvarez-Cobelas (unpubl).,0.22,9,93,0,7,0
+La Torre creek,Alvarez-Cobelas (unpubl).,5.18,345.1,0,9,43,29
+La Trobe,Victoria data,470,113.4,,,,
+La Vega creek,Alvarez-Cobelas (unpubl).,3.84,58.2,42,6,17,20
+Lafayette brook-A,Goodale et al. (2000),0.08,920,,100,,
+Lafayette brook-B,Goodale et al. (2000),0.07,930,,100,,
+Lafayette creek,USA data,48.9,1956.2,0,8,91,
+Lagan,NEST data,2862.9,413.3,4,93,,0
+Lagos lagoon,Smith et al. (2003),3285,4692.9,,,,
+Laguna de Términos,Smith et al. (2003),11900,4760,,,,
+Laihianjoki,NEST data,116.7,225.2,5,91,,0
+Lake Alimini Grande,Smith et al. (2003),1.83,1303.6,,,,
+Lake Baiyangdian,Yan et al. (2005),3.24,9,100,,,
+Lake Taihu,Yan et al. (2005),37.44,16,100,,,
+Lamone,Marchetti and Verna (1992),258.23,501.4,54,,,
+Langete,Berendt and Opitz (2000),2.06,14.1,,,,
+Laptev Sea shelf,Smith et al. (2003),222650,468.7,,,,
+Lapuanjoki,NEST data,1431.1,258,19,80,,0
+Las Vegas Wash near Henderson,USA data,157.24,39,0,14,11,
+Las Vegas Wash near Las Vegas,USA data,12.75,4.8,0,22,9,
+Lawless,Nelson et al. (1996),,,6,,,93
+Leitha,Berendt and Opitz (2000),17.13,8,,,,
+Lepreau,Clair et al. (1994),197.65,827,,,,
+Lestijoki,NEST data,501.3,286.8,16,74,,0
+Lielupe,NEST data,2563.6,154.4,62,28,,9
+Lilla Tivsjön,Arnheimer et al. (1996),3.78,295,,100,,
+Lime creek,USA data,215.31,1337.3,67,28,0,
+Lincoln creek,USA data,7.82,300.9,0,0,100,
+Lind Coulee,USA data,276.22,151.8,93,0,1,
+Lingayen gulf,Smith et al. (2003),10220,4866.7,,,,
+Liscomb,Clair et al. (1994),504.92,1298,,,,
+Lisha Kill,USA data,10.05,251.2,7,15,77,
+Little,Victoria data,0.98,2.4,,,,
+Little,USA data,155.93,465.5,67,12,1,
+Little Abiqua creek,USA data,52.56,2102.3,4,96,1,
+Little Boulder creek,Cairns and Lajtha (2005),6.45,2150,,100,,
+Little Buck creek,USA data,8.69,193.2,42,0,57,
+Little Four Mile creek,Vanni et al. (2001),55,687.5,94,5,,
+Little Pool creek,Cairns and Lajtha (2005),0.56,800,,100,,
+Little Wildcat brook-A,Goodale et al. (2000),2.19,1250,,100,,
+Little Wildcat brook-B,Goodale et al. (2000),0.05,880,,100,,
+Little Yarra,Campbell (1978),,,35,65,,
+Ljungan,NEST data,6336,338.4,0,96,,0
+Ljungbyän,NEST data,139,213.5,20,60,,0
+Ljusnan,NEST data,10986.7,354.6,4,70,,9
+Log creek,Williams and Melack (1997b),0.11,219,,100,,
+Logan,Smith et al. (2003),651,180833.3,,,,
+Lögdeälven,NEST data,981,335.1,1,76,,7
+Loire,Berendt and Opitz (2000),800.4,6.9,,,,
+Lonetree creek at Carr,USA data,0.37,0.8,2,1,2,
+Lonetree creek near Greeley,USA data,11.07,7.5,33,0,1,
+Longbow creek,Cairns and Lajtha (2005),0.48,680,,100,,
+Los Combos creek,Alvarez-Cobelas (unpubl.),1.92,27,90,1,5,2
+Lost,USA data,18.96,210.6,94,5,1,
+Lost pond-A,Goodale et al. (2000),0.12,990,,100,,
+Lost pond-B,Goodale et al. (2000),0.28,1070,,100,,
+Lough Hyne,Smith et al. (2003),1.13,2263,,,,
+Loup,USA data,2253.48,68.6,27,0,0,
+Lule Älv,NEST data,19512.2,565.8,3,88,,0
+Luleälven estuary,Smith et al. (2003),15695,313900,,,,
+Lütschine,Berendt and Opitz (2000),18.63,46.7,,,,
+Lyckebyän,NEST data,226.2,271.4,10,86,,0
+Mackenzie,Caraco and Cole (1999),342988,190,,,,
+Macleay,Smith et al. (2003),680,138775.5,,,,
+Madeira,Lewis et al. (1999),962000,740,,100,,
+Magdalena,Caraco and Cole (1999),247500,990,,,,
+Maggia,Mosello et al. (2001),684.33,739,,,,
+Mahanadi estuary,Smith et al. (2003),50613.33,5623703.7,,,,
+Main,Berendt and Opitz (2000),234.14,8.6,,,,
+Malad,USA data,82.03,9.5,14,13,0,
+Mälaren,Berendt and Opitz (2000),158.55,7,,,,
+Malindi bay,Smith et al. (2003),1825,101388.9,,,,
+Mamberamo estuary,Smith et al. (2003),130,65000,,,,
+Mandovi bay,Smith et al. (2003),1100.11,37934.8,,,,
+Manguaba,Smith et al. (2003),292,6790.7,,,,
+Manila bay,Smith et al. (2003),24090,14170.6,,,,
+Manning,Smith et al. (2003),2721,187655.2,,,,
+Mäntsäläm,NEST data,254.4,536.5,12,74,,0
+Manukau Harbour,Smith et al. (2003),730,2302.8,,,,
+Maple creek,USA data,242.65,254.1,100,0,0,
+Marano,Marchetti and Verna (1992),,,83,,,
+Marecchia,Marchetti and Verna (1992),282.72,492.5,56,,,
+Maricá-Guarapina,Smith et al. (2003),95,2714.3,,,,
+Marshall's Branch,Vanni et al. (2001),8.5,708.3,92,7,,
+Mary,Moss et al. (1992),2300,239.7,5,35,0,59
+McDonogh,Groffman et al. (2004),0.03,380,100,,,
+Mecoacan lagoon,Smith et al. (2003),133,2660,,,,
+Medway,Clair et al. (1994),1216.25,875,,,,
+Meilin,Gao et al. (2004),0.62,510,100,,,
+Mekong,Caraco and Cole (1999),477000,600,,,,
+Melk,Berendt and Opitz (2000),2.86,10,,,,
+Melo,Marchetti and Verna (1992),,,75,,,
+Menard creek,USA data,104.87,350.7,5,93,1,
+Menominee,USA data,2533.8,249.5,6,75,1,
+Merced,USA data,246.77,68.2,13,68,1,
+Merikarvi,NEST data,661.3,436.6,15,71,,0
+Merkedam,Høyas et al. (1997),,,33,92,,
+Merrimack,van Breemen et al. (2002),7070.95,589,,75,,
+Merriman,Victoria data,13,24.6,,,,
+Mersey,Clair et al. (1994),210.33,779,,,,
+Meta,Lewis et al. (1999),176000,1600,,,,100
+Meteghan,Clair et al. (1994),124.08,743,,,,
+Meuse,Caraco and Cole (1999),10440,290,,,,
+Mhlathuze estuary,Smith et al. (2003),159.87,13322.5,,,,
+Middle Saint Marys,USA data,203.87,625.4,0,65,1,
+Mill,Clair et al. (1994),24.63,524,,,,
+Mill creek,USA data,85.08,603.4,77,7,16,
+Milwaukee,USA data,227.82,126.3,73,8,13,
+Minam River,Lewis (2002),496.98,799,,,,
+Mirs bay,Smith et al. (2003),73,211,,,,
+Mississippi,Alexander et al. (2000),15257600,5113,64,5,7,6
+Mitchell,Victoria data,542,677.5,30,50,20,
+Mobile bay,Smith et al. (2003),69350,65424.5,,,,
+Mohawk,USA data,4500.27,493.8,33,55,7,
+Monocacy at Bridgeport,USA data,495.36,1083.9,77,20,3,
+Monocacy near Frederick,USA data,943.79,445,71,23,5,
+Monreal near Ossa de la Vega,Alvarez-Cobelas (unpubl.),0.23,2,85,8,,1
+Moorabool,Victoria data,6.5,5.8,,,,
+Moresby,Smith et al. (2003),250,47169.8,,,,
+Moulay,Smith et al. (2003),182.5,7934.8,,,,
+Mörrumsän,NEST data,937.6,304.4,9,87,,0
+Moshassuck,Nixon et al. (1995),38,623,,,,
+Mossman-Daintree,Moss et al. (1992),4250,1625.2,4,76,1,20
+Motala,NEST data,3076.7,230.2,22,64,,0
+Moyne,Victoria data,90,134.3,,,,90
+Muddy creek,USA data,117.51,631.8,75,24,1,
+Mulde,Berendt and Opitz (2000),57.72,7.8,,,,
+Mulgrave-Russell,Moss et al. (1992),4200,2079.2,15,49,1,35
+Murray,Victoria data,202,7.6,50,20,15,
+Murray-Darling,Caraco and Cole (1999),10500,10,,,,
+Murtopuro,Arnheimer et al. (1996),2.23,455,,100,,
+Muscatatuck,USA data,280.48,371.5,71,24,4,
+Mustijoki,NEST data,751,535.6,30,65,,0
+Mvoti estuary,Smith et al. (2003),86.14,468152.2,,,,
+Myllypuro,Arnheimer et al. (1996),3.75,379,,100,,
+Nakdong estuary,Smith et al. (2003),3650,38020.8,,,,
+Nambucca,Smith et al. (2003),450,97826.1,,,,
+Nanaimo River,Naiman and Sibert (1978),3000,3355.7,,100,,
+Närpiönjoki,NEST data,409.3,311.2,1,92,,0
+Narragansett bay,Smith et al. (2003),2993,11337.1,,,,
+Narva,NEST data,10639.1,267.1,21,59,,10
+Nava creek upstream Blanca lake,Alvarez-Cobelas (unpubl.),0.88,7.2,59,8,,9
+Neckar,Berendt and Opitz (2000),172.2,12.3,,,,
+Negro,Lewis et al. (1999),992000,1600,,100,,
+Neman,NEST data,11289.6,192.1,62,23,,10
+Neuse,Stow et al. (2001),4300,266.9,35,34,,
+Neuse at Kinston,USA data,2063.46,293.9,37,49,11,
+Neva,NEST data,73434.6,282.7,38,47,,9
+New creek,Cairns and Lajtha (2005),0.84,1200,,100,,
+Nha Trang bay,Smith et al. (2003),1934.5,5591,,,,
+Niangua,USA data,215.16,246.5,58,40,2,
+Nicholson,Victoria data,3.9,13.6,,100,,
+Nidd,House et al. (1997),251,457.2,10,30,,60
+Niger,Caraco and Cole (1999),454000,200,,,,
+Nile,Caraco and Cole (1999),33500,10,,,,
+Nissan,NEST data,1694,510.7,6,81,,0
+N01a (Konza Prairie Biological Station),Kemp and Dodds (2001),0.06,50,,,,98
+N01b (Konza Prairie Biological Station),Dodds et al. (1996),0.06,,,,,
+N02b (Konza Prairie Biological Station),Dodds et al. (1996),0.02,16.7,,,,98
+N04d (Konza Prairie Biological Station),Dodds et al. (1996),0.11,84.6,,,,98
+N20b (Konza Prairie Biological Station),Dodds et al. (1996),0.002,,,,,98
+Nolsjön,Arnheimer et al. (1996),6.17,343,,100,,
+Nood Nook brook,Cairns and Lajtha (2005),0.28,550,,100,,
+Norrström,NEST data,8221.8,231.6,5,83,,3
+North Branch Milwaukee,USA data,25.44,,88,6,1,
+North Branch Oromocto,Clair et al. (1994),355.92,639,,,,
+North Branch Potomac,USA data,2303.1,,13,81,4,
+North East Margaree,Clair et al. (1994),560.46,1523,,,,
+North San Francisco bay,Smith et al. (2003),18761,38287.8,,,,
+North-East Cape York,Moss et al. (1992),19100,441.1,0,21,0,79
+Norwalk,USA data,62.44,734.5,4,44,50,
+Notec,Berendt and Opitz (2000),65.86,3.8,,,,
+Nottoway,USA data,750.9,201.3,22,71,3,
+Nyköpingsän,NEST data,906.3,242.2,24,65,,1
+Nysa Klodzka,Berendt and Opitz (2000),23.48,5.2,,,,
+Ob gulf,Smith et al. (2003),207137.5,36759.1,,,,
+Ochlockonee,Fu and Winchester (1994),864,333.2,50,50,,
+Ochlockonee bay,Smith et al. (2003),657,27375,,,,
+Odra,NEST data,15345.7,185.7,71,10,,15
+Orange,Caraco and Cole (1999),9730,10,,,,
+Öreälven,NEST data,1720.7,359.6,1,92,,0
+Orestimba creek,USA data,10.62,379.3,96,0,0,
+Orinoco,Lewis et al. (1999),1235000,1300,,50,,50
+Osaka bay,Smith et al. (2003),9000,6000,,,,
+Otter Tail near Fergus Falls,USA data,599.85,133.3,56,23,1,
+Otter Tail near Perham,USA data,155.93,179.2,25,53,0,
+Oulujoki,NEST data,9626.6,355.2,18,80,,0
+Ouse,House et al. (1997),1675,476.5,40,50,5,10
+Ovens,Victoria data,68,10.9,,,,
+Paddy creek,USA data,41.2,521.5,11,89,0,
+Pahkaoja,Arnheimer et al. (1996),8.36,359,,100,,
+Paimionjoki,NEST data,467.8,302.5,23,66,,0
+Pakphanang,Smith et al. (2003),730,91250,,,,
+Palouse at Hooper,USA data,179.41,28.1,74,13,1,
+Paraguay,Lewis et al. (1999),44710.5,123,,,,100
+Paraná,Caraco and Cole (1999),565200,180,,,,
+Paranagua,Smith et al. (2003),4927.5,14931.8,,,,
+Pärnu,NEST data,1443.3,259.6,49,43,,6
+Patuxent estuary,Smith et al. (2003),734,5825.4,,,,
+Paunulanpuro,Arnheimer et al. (1996),0.52,347,,100,,
+Pawtuxet,Nixon et al. (1995),369,614,,,,
+Peabody brook,Goodale et al. (2000),0.43,1170,,100,,
+Peabody tributary,Goodale et al. (2000),0.92,1350,,100,,
+Peachtree creek,USA data,111.78,505.8,0,1,99,
+Peene,Berendt and Opitz (2000),20.95,4.1,,,,
+Pelorus Sound,Smith et al. (2003),1606,5537.9,,,,
+Pembina,USA data,451.69,54.5,89,6,0,
+Penobscot,van Breemen et al. (2002),11824.09,588,,84,,
+Pensaukee,USA data,9.46,108.7,86,4,0,
+Pequabuck,USA data,70.65,609.1,7,48,43,
+Perhonjoki,NEST data,890.9,284.8,24,73,,0
+Peshekee,USA data,100.48,881.4,0,88,0,
+Pete Mitchell swamp,USA data,17.27,392.5,59,35,2,
+PhanTheit bay,Smith et al. (2003),3285,8878.4,,,,
+Piaui,Smith et al. (2003),870,26363.6,,,,
+Pielach,Berendt and Opitz (2000),7.55,14,,,,
+Pine creek,USA data,7.26,9.2,93,6,1,
+Pinilla near El Bonillo,Alvarez-Cobelas (unpubl.),0.61,8.8,79,11,,2
+Pinilla upstream Blanca lake,Alvarez-Cobelas (unpubl.),3.45,19.4,77,8,,4
+Pioneer-O'Connell,Moss et al. (1992),2650,675.2,13,19,1,67
+Piper´s Hole,Clair et al. (1994),767.82,1005,,,,
+Piracicaba-C1,Filoso et al. (2003),762,394.8,2,29,,69
+Piracicaba-C10,Filoso et al. (2003),674,422.3,32,15,,49
+Piracicaba-C2,Filoso et al. (2003),998,1554.5,7,18,,75
+Piracicaba-C3,Filoso et al. (2003),1080,5454.5,61,3,,13
+Piracicaba-C4,Filoso et al. (2003),670,343.4,20,28,,70
+Piracicaba-C5,Filoso et al. (2003),1283,2902.7,47,10,,43
+Piracicaba-C6,Filoso et al. (2003),456,459.7,7,17,,76
+Piracicaba-C7,Filoso et al. (2003),2689,2140.9,82,2,,8
+Piracicaba-C8,Filoso et al. (2003),3723,2725.5,80,1,16,3
+Piracicaba-C9,Filoso et al. (2003),4008,7234.7,74,4,,9
+Piratininga-Itaipu,Smith et al. (2003),6,1500,,,,
+Pite Älv,NEST data,7699.3,514.1,1,78,,0
+Platte at Louisville,USA data,7441.4,33.6,34,9,1,
+Platte near Grand Island,USA data,1138.95,7.5,25,13,2,
+Po,Provini et al. (1992),45570,615.8,45,,,
+Po di Volano,Marchetti and Verna (1992),,,7,,,
+Point Wolfe,Clair et al. (1994),129.48,996,,,,
+Pond Branch,Groffman et al. (2004),0.12,380,,100,,
+Popple,USA data,90.14,248.3,3,61,0,
+Popple Creek,Lewis (2002),107.64,299,,,,
+Porijõgi,Mander et al. (2000),63,244.2,0,0,,6
+Port Phillip Bay,Smith et al. (2003),1293,680.5,,,,
+Portneuf,USA data,103.01,67.6,34,11,0,
+Porvoonjoki,NEST data,443.3,317,3,78,,0
+Potomac at Chain Bridge,USA data,15884.32,529.9,39,54,6,
+Prairie creek,USA data,7.07,19.4,92,0,0,
+Pregolia,NEST data,2822.1,221.7,64,22,,12
+Proserpine,Moss et al. (1992),1400,563.4,6,22,0,71
+Prosna,Berendt and Opitz (2000),12.06,2.5,,,,
+Pudding,USA data,1489.38,1181.1,58,36,5,
+Pyhäjoki,NEST data,1289.7,280.5,15,83,,0
+Quebrada El Jobo,Newbold et al. (1995),0.78,1409.1,,70,,30
+Quebrada Kathia,Newbold et al. (1995),8.06,3053,,30,,70
+Quebrada Marilin,Newbold et al. (1995),0.56,1550,,70,,30
+Quebrada Zompopa,Newbold et al. (1995),1.02,2764.9,,70,,30
+Racoon,Schilling and Zhang (2004),607,36,76,5,,17
+Ragay gulf,Smith et al. (2003),1825,506.9,,,,
+Randow,Berendt and Opitz (2000),1.47,2.2,,,,
+Räneälven,NEST data,1820.2,300.9,1,58,,15
+Rappahannock,van Breemen et al. (2002),1488.24,360,,61,,
+Rebel Flar creek,USA data,4.46,21.8,99,0,1,
+Recknitz,Berendt and Opitz (2000),3.95,5.9,,,,
+Red above Fargo,USA data,2432.09,142,85,6,1,
+Red at Grand Forks,USA data,8757.1,131.7,78,9,1,
+Red at Halstad,USA data,3538.79,79.1,85,5,1,
+Red at Pembina,USA data,6875.98,74.7,80,8,1,
+Red Butte creek,Lewis (2002),3.56,198,,,,
+Reno,Caporali et al. (1981),61.5,1500,,100,,
+Retreat Valley,Nelson et al. (1996),,,,5,,91
+Rhine,Caraco and Cole (1999),72150,370,,,,
+Rhone,Caraco and Cole (1999),53480,560,,,,
+Ría of Vigo,Smith et al. (2003),1000,6410.3,,,,
+Riánsares at Riánsares chapel,Alvarez-Cobelas (unpubl.),1.9,11.3,74,16,,0
+Riánsares at the bridge of CU-200 road,Alvarez-Cobelas (unpubl.),3.97,20,74,16,,0
+Riánsares near Corral de Almaguer,Alvarez-Cobelas (unpubl.),1.85,2.4,89,7,,0
+Riánsares near Lillo,Alvarez-Cobelas (unpubl.),3.46,3.9,90,7,,0
+Richmond,McKee and Eyre (2000),927.36,345,2,42,,49
+Ricklean,NEST data,707,318.9,4,91,,0
+Rio Chama,USA data,811.03,101.9,2,78,0,
+Río de la Plata estuary,Smith et al. (2003),700000,31818.2,,,,
+Rio Grande at El Paso,USA data,635.07,8.2,4,44,2,
+Rio Grande at Leesburg Dam,USA data,854.99,11.4,4,46,1,
+Rio Grande at Otowi Bridge,USA data,1962.17,69.1,7,57,1,
+Rio Grande at San Marcial,USA data,311.47,4.9,4,50,1,
+Rio Grande near del Norte,USA data,673.29,198.1,2,62,0,
+Rio Grande near Lasauses,USA data,171.47,24.1,14,40,0,
+Rio Grande near Lobatos,USA data,335.87,28.3,12,41,0,
+Rio Grande near Taos,USA data,911.21,53.9,10,43,1,
+Rio Negro,Likens et al. (1977),,,,100,,
+Rio Puerco,USA data,233.27,14.8,1,43,0,
+Rio-del-Rey system A,Smith et al. (2003),35405,10728.8,,,,
+Rito de los Frijoles,USA data,1.65,35,0,97,0,
+Rock creek,USA data,91.78,147.3,22,23,2,
+Rocky,Clair et al. (1994),340.01,1193,,,,
+Rocky branch-A,Goodale et al. (2000),0.15,950,,100,,
+Rocky branch-B,Goodale et al. (2000),0.45,1030,,100,,
+Rocky branch-C,Goodale et al. (2000),0.83,1280,,100,,
+Rocky branch-D,Goodale et al. (2000),0.18,1050,,100,,
+Rohden,Skop and Sorensen (1998),22.08,230,80,,,
+Ronnë ä,NEST data,440.5,271.3,13,83,,0
+Rooster,USA data,37.29,1434.2,0,1,98,
+Roseway,Clair et al. (1994),482.13,974,,,,
+Ross-Black,Moss et al. (1992),1100,369.1,0,18,3,76
+Rough Sike,Likens et al. (1977),,,,100,,
+Rubicone,Marchetti and Verna (1992),63.55,332.7,79,,,
+Rus near the Virgin chapel,Alvarez-Cobelas (unpubl.),1.66,3.3,87,6,,3
+Rush creek,USA data,19.97,289.4,28,5,66,
+Ryck,Berendt and Opitz (2000),1.22,5.3,,,,
+Saale,Berendt and Opitz (2000),139.66,5.8,,,,
+Saco,van Breemen et al. (2002),2250.53,672,,87,,
+Saguache creek,USA data,43.06,32.5,1,67,0,
+Saint Lawrence,Caraco and Cole (1999),339900,330,,,,
+Saint Mary's,Clair et al. (1994),1354.05,1003,,,,
+Saint Vrain creek,USA data,187.05,,28,44,9,
+Salaca,NEST data,807,283.1,35,47,,9
+Salmon,Clair et al. (1994),622.65,593,,,,
+Salt,USA data,478.96,217.1,18,51,0,
+Salt and Mud Sloughs,USA data,202.59,159,76,0,2,
+San Bernardino,Mosello et al. (2001),198.68,,,,,
+San Giovanni,Mosello et al. (2001),78.84,,,,,
+San Joaquin near Patterson,USA data,660.34,68.2,32,37,2,
+San Joaquin near Vernalis,USA data,1478.82,77.7,23,48,3,
+San Miguel bay,Smith et al. (2003),5110,5110,,,,
+Sand Hollow,USA data,60.09,496.6,93,0,0,
+Santa Fe,USA data,14.82,25.1,2,59,13,
+Savio,Marchetti and Verna (1992),334.18,415.6,59,,,
+Saw Mill,USA data,65.88,1045.7,0,13,86,
+Sawmill brook,Wollheim et al. (2005),1.84,449,4,14,72,
+Scape Ore Swamp,Lewis (2002),66.23,266,,,,
+SCBID Wasteway,USA data,154.62,507,58,0,1,
+Scheldt,Berendt and Opitz (2000),149.1,7.1,,,,
+Schoharie creek,USA data,445.57,196.6,30,64,2,
+Schunter,Berendt and Opitz (2000),1.5,5.1,,,,
+Schüss,Berendt and Opitz (2000),5.68,26.4,,,,
+Schussen,Berendt and Opitz (2000),12.62,16,,,,
+Schuylkill,van Breemen et al. (2002),2392.66,488,,48,,
+Seine,Berendt and Opitz (2000),419.25,6.5,,,,
+Sense,Berendt and Opitz (2000),8.59,24.2,,,,
+Sergipe,Smith et al. (2003),114.98,3484.1,,,,
+Severn,Russell et al. (1998),2649,386.7,32,,,60
+Shell creek,USA data,149.58,196.3,98,0,0,
+Shenandoah,USA data,4109,521.4,40,51,7,
+Sheyenne at Lisbon,USA data,479.48,41.2,86,1,0,
+Sheyenne near Kindred,USA data,544.79,42,84,1,0,
+Shoalwater Bay-Sarina,Moss et al. (1992),3700,328.3,4,22,0,74
+Sierra Lake-1,Williams and Melack (1997b),0,352,,,,100
+Sierra Lake-2,Williams and Melack (1997b),0,595,,,,100
+Siikajoki,NEST data,1683,284.2,15,79,,0
+Silverstream,Likens et al. (1977),,,,100,,
+Simojoki,NEST data,2459.2,412.1,1,95,,0
+Sipsey Fork,Lewis (2002),111.86,470,,,,
+Sirppujoki,NEST data,133.6,229,10,79,,0
+Skellefte Älv,NEST data,6711,471.3,1,48,,15
+Slapton Ley,Johnes (1996),23.9,519.6,20,,,80
+Sleepers,USA data,74.4,670.3,28,72,0,
+Slide brook,Goodale et al. (2000),2.64,1420,,100,,
+Slide creek,Cairns and Lajtha (2005),0.71,890,,100,,
+Small catchment at Valdivia,Oyarzun et al. (1998),0.36,2249,,100,,
+Snake,USA data,155.55,274.8,91,4,1,
+Snake at Flagg Ranch,USA data,350,264.3,0,83,0,
+Snake at King Hill,USA data,7141.98,76.8,20,23,1,
+Snake creek,USA data,48.49,527.1,16,83,1,
+Snake near Blackfoot,USA data,2490.36,78.9,19,45,1,
+Snake near Buhl,USA data,2686.33,35.3,21,25,1,
+Snake near Minidoka,USA data,4926.58,100.9,23,33,1,
+Sniptjärn,Arnheimer et al. (1996),0.22,554,,100,,
+Snowy,Victoria data,336,25,20,80,,
+Soda creek,Cairns and Lajtha (2005),3.3,1000,,100,,
+Söderköpingsan,Berendt and Opitz (2000),4.59,5.2,,,,
+Sogod bay,Smith et al. (2003),1095,2737.5,,,,
+Solent estuary,Smith et al. (2003),1000,5000,,,,
+Solimoes,Lewis et al. (1999),1440000,1200,,100,,
+Solmyren,Arnheimer et al. (1996),11.28,410,,100,,
+Sonadora,Lewis et al. (1999),6.49,2497,,100,,
+Sopchoppy,Fu and Winchester (1994),145,549.2,,80,,
+Sope creek,USA data,149.31,1866.4,0,1,98,
+Sorsogon bay,Smith et al. (2003),1095,3650,,,,
+Sotuélamos creek near Sotuélamos,Alvarez-Cobelas (unpubl.),0.61,15.4,56,24,,0
+South San Francisco bay,Smith et al. (2003),456.25,1754.8,,,,
+Southern North sea,Smith et al. (2003),190000,633.3,,,,
+Spang,Skop and Sorensen (1998),,,80,,,
+Spanish Grant drain,USA data,10.16,181.4,97,0,3,
+Spuller lake,Lewis et al. (1999),0.79,789,,,,100
+Saint Vrain creek,USA data,187.05,73,28,44,9,
+Saint Lawrence,Caraco and Cole (1999),339900,330,,,,
+Saint Mary's,Clair et al. (1994),1354.05,1003,,,,
+South Platte near Kersey,USA data,571.33,,20,38,7,
+South Branch Potomac,USA data,2963.32,,22,78,1,
+South Fork Palouse,USA data,16.72,,91,5,4,
+South Fork (South Branch Potomac),USA data,164.21,,14,86,0,
+South Platte at Denver,USA data,302.25,,6,48,6,
+South Platte at Henderson,USA data,250.26,,7,44,10,
+South Platte at North Platte,USA data,214.34,,36,16,3,
+South Platte near Balzac,USA data,208.91,,28,23,4,
+Stanislaus,USA data,446.76,155.3,7,71,2,
+Stensan,Berendt and Opitz (2000),3.51,12.3,,,,
+Stepenitz,Berendt and Opitz (2000),5.4,7.7,,,,
+Stormyra,Arnheimer et al. (1996),1.31,336,,100,,
+Storsjön,Likens et al. (1977),,,,100,,
+Strona,Mosello et al. (2001),28.38,126.7,,,,
+Subic bay,Smith et al. (2003),730,2253.1,,,,
+Sude,Berendt and Opitz (2000),14.87,6.6,,,,
+Sugar creek,USA data,40.07,162.9,95,1,3,
+Sumjin estuary,Smith et al. (2003),730,13272.7,,,,
+Sundays estuary,Smith et al. (2003),59.13,19710,,,,
+Sunshine coast,Moss et al. (1992),2300,350.3,2,41,1,55
+Surry,Victoria data,80,258.1,,90,,10
+Susquehanna,van Breemen et al. (2002),34182.04,487,,67,,
+Suwannee,USA data,13672.62,669.7,31,48,2,
+Swale,House et al. (1997),619,424.8,20,40,5,30
+Swan-Canning estuary,Smith et al. (2003),1314,39818.2,,,,
+Swartkops estuary,Smith et al. (2003),43.07,10767.5,,,,
+Szczecin  lagoon,Smith et al. (2003),16100,23435.2,,,,
+Tachin,Smith et al. (2003),3467.5,182500,,,,
+Tambo,Victoria data,39,41.4,30,70,,
+Tapong bay,Smith et al. (2003),36.5,7300,,,,
+Tar at Tarboro,USA data,1226.18,213.1,38,50,5,
+Tarra,Victoria data,13,60.5,,,,
+Tarwin,Victoria data,271,254,,,,
+Taughannock creek,Likens et al. (1977),,,,100,,
+Taunton,Nixon et al. (1995),938,644.7,,,,
+Tavollo,Marchetti and Verna (1992),,,56,,,
+Taylor creek,Cairns and Lajtha (2005),1.67,1110,,100,,
+Teacapan-Agua Brava-Marismas Nacionales,Smith et al. (2003),5500,3437.5,,,,
+Teeressuonoja,Arnheimer et al. (1996),0.21,303,,100,,
+Teluk Banten bay,Smith et al. (2003),365,2433.3,,,,
+Tempisquito,Newbold et al. (1995),9.3,2915.4,,30,,70
+Tempisquito Sur,Newbold et al. (1995),13.02,4186.5,,30,,70
+Tenmile,USA data,348.81,699,43,52,3,
+Teton,USA data,502.61,219.1,40,38,0,
+Thames,Caraco and Cole (1999),1552.2,120,,,,
+Tharp's Creek,Williams and Melack (1997b),0.03,219,,100,,
+Thukela estuary,Smith et al. (2003),1100.11,1833516.7,,,,
+Tiber,Caraco and Cole (1999),7471.25,430,,,,
+Ticino,Mosello et al. (2001),2109.76,1305.5,,,,
+Toce,Mosello et al. (2001),2327.36,1494.8,,,,
+Tokyo bay,Smith et al. (2003),8000,8000,,,,
+Tollense,Berendt and Opitz (2000),7.6,4.2,,,,
+Tomales bay,Smith et al. (2003),90,5625,,,,
+Tommorow,USA data,27.67,242.7,58,31,0,
+Torne Älv,NEST data,18542.6,330.2,4,92,,0
+Toronja,Lewis et al. (1999),0.28,1750,,100,,
+Torrent,Clair et al. (1994),729.46,1169,,,,
+Trebel,Berendt and Opitz (2000),5.06,5.1,,,,
+Trent,House et al. (1997),2748,334.1,90,10,,
+Tresa,Mosello et al. (2001),766.32,1016.3,,,,
+Trinity at Romayor,USA data,12115.26,271.5,56,23,8,
+Trinity below Dallas,USA data,3488.88,214.4,50,11,14,
+Trombetas,Lewis et al. (1999),70200,540,,100,,
+Trout creek,Cairns and Lajtha (2005),12.03,1240,,100,,
+Truckee at Clark,USA data,255.69,62,2,45,7,
+Truckee at Farad,USA data,408.38,169,0,61,5,
+Truckee near Nixon,USA data,77.24,16.5,2,41,6,
+Truckee near Sparks,USA data,159.14,57.6,0,57,6,
+Tsengwen estuary,Smith et al. (2003),73,24333.3,,,,
+Tualatin,USA data,1333.51,727.9,35,48,17,
+Tucsawhatchee creek,USA data,438.57,1044.2,56,41,2,
+Tully-Murray,Moss et al. (1992),5300,1876.1,5,66,0,28
+Tuolumne,USA data,297.04,62.3,4,68,3,
+Turlock lateral,USA data,38.54,172,86,0,14,
+Turnpike creek,USA data,64.72,501.7,30,69,1,
+Turtle,USA data,141.52,215.1,96,1,1,
+Tusket,Clair et al. (1994),944.81,883,,,,
+Tweed,Smith et al. (2003),532,84444.4,,,,
+Uecker,Berendt and Opitz (2000),6,2.5,,,,
+Ume Älv,NEST data,18574.6,535.8,0,67,,7
+Upper Kuparuk,Peterson et al. (1990),250,1748.3,,,,100
+Upper Twin creek,Lewis (2002),7.6,245,,,,
+Ure,House et al. (1997),698,710.8,,60,,40
+Uruguay,Caraco and Cole (1999),122100,330,,,,
+Uskelanjoki,NEST data,268,270.8,20,78,,0
+Uso,Marchetti and Verna (1992),47.74,320.4,69,,,
+Ussuriyskiy bay,Smith et al. (2003),255.5,3406.7,,,,
+Vähä-Askanjoki,Arnheimer et al. (1996),7.45,454,,100,,
+Valdejudíos near Carrascosa,Alvarez-Cobelas (unpubl).,28.92,,99,0,,1
+Valeroso creek,Alvarez-Cobelas (unpubl).,0.17,17.9,21,0,52,20
+Valle Smarlacca,Smith et al. (2003),2.56,1277.5,,,,
+Vallecito creek,Lewis (2002),126.85,682,,,,
+Valparaíso,Alvarez-Cobelas (unpubl.),0.82,5.7,87,12,,0
+Van swamp,USA data,15.01,268,5,81,0,
+Vantaa,NEST data,614.7,319.7,16,82,,0
+Vantaanjoki,Berendt and Opitz (2000),23.6,14,,,,
+Vejle,Skop and Sorensen (1998),,,80,,,
+Velen,Likens et al. (1977),,,,100,,
+Venta,NEST data,2271.9,212.6,75,16,,6
+Ventena,Marchetti and Verna (1992),12.4,302.4,45,,,
+Verzasca,Mosello et al. (2001),,,,,,
+Villa Nova,Groffman et al. (2004),,,8,22,50,
+Vils,Berendt and Opitz (2000),6.5,8.6,,,,
+Vinemaple creek,Cairns and Lajtha (2005),1.76,1950,,100,,
+Vironjoki,NEST data,150.8,411.2,55,33,,11
+Viskan,NEST data,1616.2,600.3,8,82,,0
+Vistula,NEST data,31764.3,219.2,74,7,,12
+Volga,Caraco and Cole (1999),266000,190,,,,
+Vouddasbäcken,Arnheimer et al. (1996),19.36,461,,100,,
+Walker Branch,Likens et al. (1977),,,,100,,
+Wallace,Clair et al. (1994),262.84,882,,,,
+Wallensteingraben,Berendt and Opitz (2000),1.19,7.6,,,,
+Wallkill,USA data,1257.34,673.8,53,34,10,
+Walnut Creek,Tomer et al. (2003),44.37,870,90,,,
+Warnow,Berendt and Opitz (2000),13.81,4.4,,,,
+Warta,Berendt and Opitz (2000),174.46,3.2,,,,
+Werribee,Victoria data,2.6,1.8,67,25,5,
+Western cascades,Likens et al. (1977),,,,100,,
+West Fork Little,USA data,56.3,,42,57,1,
+West Fork Three creek,Cairns and Lajtha (2005),9.17,1910,,100,,
+West Fork Trinity,USA data,824.05,,38,16,5,
+Wet Bottom creek,Lewis (2002),8.74,94,,,,
+Wharfe,House et al. (1997),491,600.2,,70,5,20
+White,USA data,836.17,467.1,19,80,1,
+White at Hazleton,USA data,9495.12,324.2,69,22,7,
+White near Centerton,USA data,2022.85,319.8,78,3,18,
+White near Elnora,USA data,3905.37,314.1,70,19,10,
+Whiteroek creek,Cairns and Lajtha (2005),5.64,1150,,100,,
+Wild Rice,USA data,529.93,220.2,50,37,0,
+Willamette at Portland,USA data,32686.67,1129.6,23,70,6,
+Wilson inlet,Smith et al. (2003),156,3250,,,,
+Wilsons,McKee and Eyre (2000),1204.89,754,1,23,,65
+Windrush,Johnes (1996),,,70,5,5,20
+Wingan,Victoria data,20,47.6,20,80,,
+Winnisook,Lovett et al. (2000),2.16,1084.9,,100,,
+Withlacoochee,USA data,3080.5,797.2,56,34,3,
+Wolf creek,Cairns and Lajtha (2005),4.66,880,,100,,
+Woonasquatucket,Nixon et al. (1995),88,656.7,,,,
+WS2 (H.J. Andrews Exp. Forest),Vanderbilt et al. (2002),0.78,1300,,100,,
+WS8 (H.J. Andrews Exp. Forest),Vanderbilt et al. (2002),0.03,120,,100,,
+WS9 (H.J. Andrews Exp. Forest),Vanderbilt et al. (2002),0.12,1500,,100,,
+Wuchuan,Cao et al. (2006),,,100,,,
+Yalujiang estuary,Smith et al. (2003),39055,229735.3,,,,
+Yangtze,Caraco and Cole (1999),666000,370,,,,
+Ybbs,Berendt and Opitz (2000),30.76,26,,,,
+Yellow Sea system,Smith et al. (2003),120085,285.9,,,,
+Yenisei estuary,Smith et al. (2003),205312.5,10291.4,,,,
+Yocum creek,USA data,36.74,274.2,74,24,1,
+Young Womans creek,Lewis (2002),64.38,541,,,,
+Yukon,Caraco and Cole (1999),193200,230,,,,
+Zambezi,Caraco and Cole (1999),125600,80,,,,
+Záncara near Fuentelespino de Haro,Alvarez-Cobelas (unpubl.),18.59,35.3,78,14,,2
+Záncara near Las Pedroñeras,Alvarez-Cobelas (unpubl.),17.76,18.8,80,13,,2
+Záncara near Palomares,Alvarez-Cobelas (unpubl.),5.64,48,65,26,,1
+Zarow,Berendt and Opitz (2000),2.69,3.6,,,,
+Zealand valley-A,Goodale et al. (2000),1.12,980,,100,,
+Zealand valley-B,Goodale et al. (2000),0.04,880,,100,,
+Zealand valley-C,Goodale et al. (2000),0.16,950,,100,,
+Zollner creek,USA data,37.48,961,99,0,1,
