@@ -553,15 +553,6 @@ fish_catch <- df_current %>%
 ```
 
 
-
-```{r}
-catch_sum <- fish_catch %>%
-  filter(time > 1200 & time <= 1220) %>% 
-  group_by(Scenario) %>% 
-  summarize(ann_avg_catch = sum(Mass_kg)/1e3/20) # [tons] was in g/m^2 at each time step. Sum the harvest at each time step and multiply by the area to get the mass. Convert to metric tons
-
-```
-
 # Nitrogen accumulation analysis to estimate ecosystem services of IAAS in each scenarios
 ```{r}
 # Current land use of taro agriculture and wetland
@@ -574,9 +565,8 @@ fpC_nitrogen <- na.omit(fpC_nitrogen)
 
 fpC_nitrogen <- transform(fpC_nitrogen, N_mass = ifelse(species == "No_fp" | species == "Ni_fp" | species == "Na_fp", V_fp*concentration, 
                                                  ifelse(species == "No_sd" | species == "Ni_sd" | species == "Na_sd", V_sed*concentration,
-                                                        ifelse(species == "alg", concentration/alg_CN*V_fp/h_fp, concentration*FCR/alg_CN*V_fp/h_fp)))) # theoretically converting fish C to alg C via FCR and then alg C to N usin g Redfield ratio
+                                                        ifelse(species == "alg", concentration/alg_CN*V_fp/h_fp, concentration*FCR/alg_CN*V_fp/h_fp)))) # converting fish C to alg C via FCR and then alg C to N using Redfield ratio
 
-# ideally you also want to account for the amount of nitrogen buried in the system
 
 fpC_nitrogen$year <- floor(fpC_nitrogen$time) - 1200
 
@@ -589,9 +579,8 @@ fpR_nitrogen <- na.omit(fpR_nitrogen)
 
 fpR_nitrogen <- transform(fpR_nitrogen, N_mass = ifelse(species == "No_fp" | species == "Ni_fp" | species == "Na_fp", V_fp*concentration, 
                                                  ifelse(species == "No_sd" | species == "Ni_sd" | species == "Na_sd", V_sed*concentration,
-                                                        ifelse(species == "alg", concentration/alg_CN*V_fp/h_fp, concentration*FCR/alg_CN*V_fp/h_fp)))) # theoretically converting fish C to alg C via FCR and then alg C to N usin g Redfield ratio
+                                                        ifelse(species == "alg", concentration/alg_CN*V_fp/h_fp, concentration*FCR/alg_CN*V_fp/h_fp)))) # converting fish C to alg C via FCR and then alg C to N using Redfield ratio
 
-# ideally you also want to account for the amount of nitrogen buried in the system
 
 fpR_nitrogen$year <- floor(fpR_nitrogen$time) - 1200
 
@@ -604,9 +593,8 @@ fpU_nitrogen <- na.omit(fpU_nitrogen)
 
 fpU_nitrogen <- transform(fpU_nitrogen, N_mass = ifelse(species == "No_fp" | species == "Ni_fp" | species == "Na_fp", V_fp*concentration, 
                                                  ifelse(species == "No_sd" | species == "Ni_sd" | species == "Na_sd", V_sed*concentration,
-                                                        ifelse(species == "alg", concentration/alg_CN*V_fp/h_fp, concentration*FCR/alg_CN*V_fp/h_fp)))) # theoretically converting fish C to alg C via FCR and then alg C to N usin g Redfield ratio
+                                                        ifelse(species == "alg", concentration/alg_CN*V_fp/h_fp, concentration*FCR/alg_CN*V_fp/h_fp)))) # theoretically converting fish C to alg C via FCR and then alg C to N using Redfield ratio
 
-# ideally you also want to account for the amount of nitrogen buried in the system
 
 fpU_nitrogen$year <- floor(fpU_nitrogen$time) - 1200
 ```
